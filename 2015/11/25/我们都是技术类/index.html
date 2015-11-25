@@ -9,7 +9,8 @@
     
     <meta name="author" content="魏传波">
     
-    <meta name="description" content="学习">
+    <meta name="description" content="#我们都是技术类
+##如何做一个快乐的程序猿">
     
     
     
@@ -60,64 +61,70 @@
 </div>
     </header>
     <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/25/我们都是技术类/" title="" itemprop="url">
-  
-    <h1 itemprop="name"></h1>
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-     
-           <p itemprop="description" >#我们都是技术类
-##如何做一个快乐的程序猿</p>
-        
+      <a href="/2015/11/25/我们都是技术类/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
     
+      <a href="http://yoursite.com" title="魏传波">魏传波</a>
+    </p>
+  <p class="article-time">
     <time datetime="2015-11-25T11:36:28.000Z" itemprop="datePublished">2015-11-25</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/25/我的故乡/" title="" itemprop="url">
-  
-    <h1 itemprop="name"></h1>
+    更新日期:<time datetime="2015-11-25T11:36:28.000Z" itemprop="dateModified">2015-11-25</time>
     
-     
-           <p itemprop="description" >#我的故乡
-##我的家
-###家的温暖
-第一篇博客，写给家乡。
-来上海一个多月了，渐渐习惯了这里的生活。前两天家里下了场大雪就怀念起在家的感觉。
-
-
-victor
-
-*星期三
-*2015.11.25</p>
-        
-    
-    <time datetime="2015-11-25T09:05:43.000Z" itemprop="datePublished">2015-11-25</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>#我们都是技术类</p>
+<p>##如何做一个快乐的程序猿</p>
   
-    <a href="/2015/11/24/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-    <time datetime="2015-11-24T11:52:02.000Z" itemprop="datePublished">2015-11-24</time>
-  </a>
-</section>
+	</div>
+		<footer class="article-footer clearfix">
 
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/11/25/我们都是技术类/" data-title="莫风泪" data-tsina="null" class="share clearfix">
+  </div>
 
 </div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2015/11/25/我的故乡/"  title="">
+ <strong>NEXT:</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
 
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -184,6 +191,8 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -203,6 +212,66 @@ $(document).ready(function(){
 });
 </script>
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
 
@@ -210,4 +279,4 @@ $(document).ready(function(){
 
 
   </body>
- </html>
+</html>
