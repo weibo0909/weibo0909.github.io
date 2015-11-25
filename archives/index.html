@@ -22,8 +22,6 @@
     <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link href="/css/hover.css" rel="stylesheet">
-    <link href="/css/bottom.css" rel="stylesheet">
 </head>
 
     <body>
@@ -31,31 +29,35 @@
         <div>
 		
 			<div id="imglogo">
-				<a rel="pulse" class="pulse" href="/"><img src="/img/pacman.png" alt="莫风泪" title="莫风泪"/></a>
+				<a href="/"><img src="/img/logo.svg" alt="莫风泪" title="莫风泪"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a rel="hover" class="hover" href="/" title="莫风泪">莫风泪</a></h1>
-				<h2 class="blog-motto"><a rel="wobble-to-bottom-right" class="wobble-to-bottom-right" href="#" title="#">一首老歌，一杯老酒</a></h2>
+				<h1 class="site-name"><a href="/" title="莫风泪">莫风泪</a></h1>
+				<h2 class="blog-motto">一首老歌，一杯老酒</h2>
 			</div>
-			<div class="navbar"><a rel="buzz" class="buzz" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
 					<ul>
 					 
-						<li><a rel="wobble-top" class="wobble-top" href="/">Home</a></li>
+						<li><a href="/">Home</a></li>
 					
-						<li><a rel="wobble-top" class="wobble-top" href="/archives">Menu</a></li>
+						<li><a href="/archives">Archives</a></li>
 					
-						<li><a rel="wobble-top" class="wobble-top" href="/tags">Index</a></li>
+					<li>
 					
-						<li><a rel="wobble-top" class="wobble-top" href="/about">About</a></li>
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
 					
+					</li>
 				</ul>
 			</nav>			
 </div>
-
       </header>
       <div id="container">
         
@@ -73,7 +75,7 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a rel="sink" class="sink" href="/2015/11/24/hello-world/" title="Hello World" itemprop="url">
+    <a href="/2015/11/24/hello-world/" title="Hello World" itemprop="url">
   
     <h1 itemprop="name">Hello World</h1>
     
@@ -82,17 +84,11 @@
 </section>
 
 
-
   </div>
 </div>
 
       </div>
       <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
 	
 	
 	<div class="social-font" class="clearfix">
@@ -101,10 +97,9 @@
 		
 		
 	</div>
-		<p class="copyright">Powered by <a rel="float-shadow" class="float-shadow" href="http://zespia.tw/hexo/" target="_blank" title="hexo">Hexo</a> and Theme by <a class="box-shadow-inset"href="https://github.com/uruir/pacmanhover" target="_blank" title="Pacman">PacmanHover</a> © 2015 
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
 		
-		
-		<a class="wobble-horizontal" rel="wobble-horizontal" href="http://yoursite.com" target="_blank" title="魏传波">魏传波</a>
+		<a href="http://yoursite.com" target="_blank" title="魏传波">魏传波</a>
 		
 		</p>
 </div>
