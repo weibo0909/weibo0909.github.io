@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <a href="/2015/11/26/学习过程/" title="学习过程" itemprop="url">学习过程</a>
   </h1>
   <p class="article-time">
-    <time datetime="2015-11-26T11:49:56.000Z" itemprop="datePublished">2015-11-26</time>
+    <time datetime="2015-11-26T12:45:24.000Z" itemprop="datePublished">2015-11-26</time>
   </p>
 </header>
 	<div class="article-content">
@@ -113,7 +113,7 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li></ol>
 		</div>
 		
 		<p>#终端命令</p>
@@ -145,6 +145,12 @@ var _hmt = _hmt || [];
 <p>6.内容不可以写在head，html等地方。</p>
 <p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%885.11.48.png?imageView2/2/w/203/h/203&amp;e=1448616355&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:HsgHJJw1jnml3H9B_e3yJCgYcus" alt=""></p>
 <hr>
+<p>#body标签</p>
+<p>1.body标签是html文档的可视化区域</p>
+<p>2.body标签有默认宽度，就是浏览器的窗口宽度。我们调整浏览器的窗口大小，body的宽度也会随着改变。</p>
+<p>3.body标签有默认的margin外边距，为8px。所以body里面的内容总是和浏览器窗口顶部，左边有8px距离de原因。</p>
+<p>4.我们可以为body设置宽高，背景，padding,border等css样式。但是背景样式不会遵从width,height的样式设置。因为背景是作用于可视区域的。body的可视区域是浏览器的窗口。</p>
+<hr>
 <p>#div标签<br>1.div标签是双标签，表示一个区域，没有别的语义，通常用作容器。</p>
 <p>2.div有默认宽度，没有设置宽度的话，继承父级标签的宽度。</p>
 <p>3.div的默认高度是0px。有可见内容会撑开容器高度。</p>
@@ -162,6 +168,53 @@ var _hmt = _hmt || [];
 <p><strong><em>推荐</em></strong></p>
 <p>外部引入方式，如图：</p>
 <p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.19.30.png?imageView2/2/w/203/h/203&amp;e=1448623204&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:wv0GgMQh81ZPEv1ShWfwDijhghw" alt=""></p>
+<hr>
+<p>#background背景<br>1.background-clor:red;背景色</p>
+<p>属性值可以为英语代码如：red，green等<br>可以为16进制颜色码如：#ffffff,#000000等<br>可以为rgb格式如：rgb(255,182,193)等;</p>
+<p>2.background-image:url();背景图片</p>
+<p>url图片路径要用””引起来，可以为本地的图片路径如：url(“img/pic.jpg”);。<br>可以为线上有效链接如：url(“<a href="http://www.xxxxxxx.com/xxx.jpg&quot;);引入的图片的初始位置在容器的左上角。铺满容器的区域。" target="_blank" rel="external">http://www.xxxxxxx.com/xxx.jpg&quot;);引入的图片的初始位置在容器的左上角。铺满容器的区域。</a></p>
+<p>3.background-position:x y;背景位置</p>
+<p>*作用于背景图片</p>
+<p>*x为平行位置，可以为准确数值如100px,也可以为负数如－100px,也可以百分比如20%。也可以为位置如：left center right.</p>
+<p><em>y为垂直位置，可以为准确数值如100px,也可以为负数如－100px,也可以百分比如20%。也可以为位置如：top center bottom.
+</em>background-position:center;可以为一个值。这个值毕竟x,y都支持才可以。</p>
+<p>4.background-repeat:no-repeat/repeat-x/repeat-y;背景平铺<br>*作用于背景图片</p>
+<p>*no-repeat 背景图片不要平铺</p>
+<p>*repeat-x 平行方向平铺</p>
+<p>*repeat-y 垂直方向平铺</p>
+<p>5.background的复合写法：</p>
+<p>background:red url() 0px 0px no-repeat;</p>
+<p>没有顺序要求。推荐这种顺序。复合写法中background-position要求写两个值。</p>
+<p><strong><em>注意事项</em></strong></p>
+<p>background的样式不会影响到容器的宽高，内容。！！！！！<br><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.07.51.png?imageView2/2/w/203/h/203&amp;e=1448626124&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:hOLLEPMv21r4F-rNjcZKuR-YMWY" alt=""><br><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.08.06.png?imageView2/2/w/203/h/203&amp;e=1448626176&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:yjeB5413uSULd_yzSyfYgpUDzW4" alt=""></p>
+<hr>
+<p>#padding内边距</p>
+<p>1.padding内边距，作用于自身和自身内容，padding出来的空间，背景会填充起来。</p>
+<p>padding-top:;内上边距,容器上侧与内容的距离。会增加容器的高度。</p>
+<p>padding-right:;内右边距,容器右侧与内容的距离。会增加容器的宽度。</p>
+<p>padding-bottom:;内下边距,容器下侧与内容的距离。会增加容器的高度。</p>
+<p>padding-left:;内左边距,容器左侧与内容的距离。会增加容器的宽度。</p>
+<p>取值为精确数值如：100px;不可以为负数；</p>
+<p>取值可以为百分比如：padding-left:20%;</p>
+<p>2.padding的复合写法</p>
+<p>padding:0px 0px 0px 0px;TRBL法则</p>
+<p>padding:0px 0px 0px;上 左右 下；</p>
+<p>padding:0px 0px;上下 左右；</p>
+<p>padding:0px;上右下左。    </p>
+<h2 id=""><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.39.43.png?imageView2/2/w/203/h/203&amp;e=1448628194&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:zUOj9dGod-eFTV5a_DSe8P9Q1Lc" alt=""></h2><p>#margin外边距</p>
+<p>1.margin外边距，作用于容器父级标签元素和相邻标签元素，对自身和内容没有影响。</p>
+<p>margin-top:;外上边距,容器外上侧与相邻标签的距离。</p>
+<p>margin-right:;外右边距,容器外右侧与相邻标签的距离。</p>
+<p>margin-bottom:;外下边距,容器下外侧与相邻标签的距离。</p>
+<p>margin-left:;外左边距,容器左侧与相邻标签的距离。</p>
+<p>取值为精确数值如：100px;可以为负数；</p>
+<p>margin-left和margin-right可以取值为auto;实现居中效果。可以取值为百分比如：margin-left:20%;</p>
+<p>2.margin的复合写法<br>margin:0px 0px 0px 0px;</p>
+<p>TRBL法则</p>
+<p>margin:0px 0px 0px;上 左右 下；</p>
+<p>margin:0px 0px;上下 左右；</p>
+<p>margin:0px;上右下左。    </p>
+<p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.40.17.png?imageView2/2/w/203/h/203&amp;e=1448628098&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:se7dhUuoX75eoA8EzXxVb_kkP2U" alt=""></p>
 <hr>
 <p>（未完待续…）</p>
   
