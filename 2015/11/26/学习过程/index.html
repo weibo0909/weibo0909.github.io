@@ -4,15 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>新人浅谈 | Sunday</title>
+    <title>学习过程 | Sunday</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="魏传波">
     
-    <meta name="description" content="人生格言：
-多读书多看报少吃零食多睡觉
-要想活得好，心态最重要
-对于我这种初学者肯定没什么经验的。现在的初学阶段就是要学习。看一些大牛的博客，会让人耳目一新的感觉，哦，原来还可以这么玩。有很多的小技巧前人已经给我们总结的很好了，我们完全可以拿来用。我们也可以拿前人的代码结构来模仿，然后，一定要善于总">
+    <meta name="description" content="#终端命令
+1.pwd显示当前文件路径
+2.ls显示当前文件夹的目录结构
+3.cd进入某某文件夹
+4.cd .. 返回上一级
+5.mkdir 创建文件夹 
+6.touch 创建文件
+ 注意事项 
+1.cd 进入的是文件夹，不是文件！例如：cd web,如果该文件夹里面有文件夹，可以直接进入。例如：c">
     
     
     
@@ -97,10 +102,10 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/26/我们都是技术类/" title="新人浅谈" itemprop="url">新人浅谈</a>
+      <a href="/2015/11/26/学习过程/" title="学习过程" itemprop="url">学习过程</a>
   </h1>
   <p class="article-time">
-    <time datetime="2015-11-26T07:54:42.000Z" itemprop="datePublished">2015-11-26</time>
+    <time datetime="2015-11-26T11:31:57.000Z" itemprop="datePublished">2015-11-26</time>
   </p>
 </header>
 	<div class="article-content">
@@ -111,10 +116,53 @@ var _hmt = _hmt || [];
 		
 		</div>
 		
-		<p>人生格言：</p>
-<p><strong>多读书多看报少吃零食多睡觉</strong></p>
-<p><strong>要想活得好，心态最重要</strong></p>
-<p>对于我这种初学者肯定没什么经验的。现在的初学阶段就是要学习。看一些大牛的博客，会让人耳目一新的感觉，哦，原来还可以这么玩。有很多的小技巧前人已经给我们总结的很好了，我们完全可以拿来用。我们也可以拿前人的代码结构来模仿，然后，一定要善于总结，最好能形成属于自己的代码风格。</p>
+		<p>#终端命令</p>
+<p>1.pwd显示当前文件路径</p>
+<p>2.ls显示当前文件夹的目录结构</p>
+<p>3.cd进入某某文件夹</p>
+<p>4.cd .. 返回上一级</p>
+<p>5.mkdir 创建文件夹 </p>
+<p>6.touch 创建文件</p>
+<p> <strong><em>注意事项</em></strong> </p>
+<p>1.cd 进入的是文件夹，不是文件！例如：cd web,如果该文件夹里面有文件夹，可以直接进入。例如：cd web/css </p>
+<p>2.cd ..是返回上一级目录，cd ../..是返回更上级,依次类推，直到根目录。 </p>
+<p>3.mkdir是创建文件夹！！！！不是文件！</p>
+<p>4.touch是创建文件。记得加格式后缀。例如：touch index.css </p>
+<p>5.命名规范，不要中文，纯数字，有语义的单词，拼音也行啊…</p>
+<hr>
+<p>#HTML5文档</p>
+<p>1.html表示文档的根目录，它包含head区域和body区域 </p>
+<p>2.head区域一定要有title，也就是文档标题 </p>
+<p>3.meta标签的charset属性指定文档的编码格式。 </p>
+<p>4.body是该页面的可视化区域 </p>
+<p>5.doctype不是一个标签，它来指定html文档的版本。方便浏览器解析。</p>
+<p> <strong><em>注意事项</em></strong> </p>
+<p>1.所有的标签，标签属性都要小写。 </p>
+<p>2.标签有双标签和单标签之分。双标签是成双成对出现的。有开始标签和结束标签。单标签的闭合方式不同于双标签。例如：，它们只有一个标签，在末尾的地方”&gt;”前面加上”/“。完成闭合。 </p>
+<p>3.doctype头文档声明不是一个标签，所以没有闭合，记的在前面加上”!”。 </p>
+<p>4.注意缩进操作，文档的结构清晰明了。</p>
+<p>5.body里面的内容，最好都要有标签嵌套。 </p>
+<p>6.内容不可以写在head，html等地方。</p>
+<p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%885.11.48.png?imageView2/2/w/203/h/203&amp;e=1448616355&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:HsgHJJw1jnml3H9B_e3yJCgYcus" alt=""></p>
+<hr>
+<p>#div标签<br>1.div标签是双标签，表示一个区域，没有别的语义，通常用作容器。</p>
+<p>2.div有默认宽度，没有设置宽度的话，继承父级标签的宽度。</p>
+<p>3.div的默认高度是0px。有可见内容会撑开容器高度。</p>
+<p> <strong><em>注意事项</em></strong></p>
+<p>1.div是双标签,注意闭合。</p>
+<p>2.div的默认高度是0px。没有内容是不可见的。<br> <img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.11.59.png?imageView2/2/w/203/h/203&amp;e=1448622793&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:N9Q-TIJOq4ThfmVUD1jyniqUj2o" alt=""></p>
+<hr>
+<p>#css</p>
+<p>1.css是层叠样式表。</p>
+<p>2.css的语法：举例 ele {color:red;} ele 表示选择器 {} css语句的区域 color css的颜色属性 red css的颜色属性值 。</p>
+<p>3.引入方式</p>
+<p>第一种引入方式：行间样式<br>优点：可以直接作用于标签，不会影响到其他标签。有冲突的css样式，优先级最高。 缺点：不能重复使用。影响html文档。影响阅读。 </p>
+<p>第二种引入方式：html文档内容引入： 优点：在head标签内引入style区域，不会影响body标签结构，有点内容，样式分离的味道。 缺点：不能重复使用，优先级低于行间样式。 </p>
+<p>第三种引入方式：外部引入方式： 优点：完全的内容，样式分离，可以和其它html文档共享css文件。 缺点：会发生一次请求，浏览器渲染html的时候，会请求样式。内部的样式就不会发生请求。</p>
+<p><strong><em>推荐</em></strong></p>
+<p>外部引入方式，如图：</p>
+<p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.19.30.png?imageView2/2/w/203/h/203&amp;e=1448623204&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:wv0GgMQh81ZPEv1ShWfwDijhghw" alt=""></p>
+<hr>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -124,7 +172,7 @@ var _hmt = _hmt || [];
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/11/26/我们都是技术类/" data-title="新人浅谈 | Sunday" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/11/26/学习过程/" data-title="学习过程 | Sunday" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -133,19 +181,11 @@ var _hmt = _hmt || [];
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/11/26/学习过程/" title="学习过程">
-  <strong>新一篇:</strong><br/>
-  <span>
-  学习过程</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/11/26/border-width/"  title="border-width">
+<a href="/2015/11/26/我们都是技术类/"  title="新人浅谈">
  <strong>旧一篇:</strong><br/> 
- <span>border-width
+ <span>新人浅谈
 </span>
 </a>
 </div>
@@ -155,7 +195,7 @@ var _hmt = _hmt || [];
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="新人浅谈" data-thread-key="我们都是技术类" data-author-key="魏传波" data-url="http://yoursite.com/post/我们都是技术类"></div>
+	<div class="ds-thread" data-title="学习过程" data-thread-key="学习过程" data-author-key="魏传波" data-url="http://yoursite.com/post/学习过程"></div>
 	
 </section>
 
