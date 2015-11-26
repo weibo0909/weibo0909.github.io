@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
       <a href="/2015/11/26/学习过程/" title="学习过程" itemprop="url">学习过程</a>
   </h1>
   <p class="article-time">
-    <time datetime="2015-11-26T12:45:24.000Z" itemprop="datePublished">2015-11-26</time>
+    <time datetime="2015-11-26T13:20:35.000Z" itemprop="datePublished">2015-11-26</time>
   </p>
 </header>
 	<div class="article-content">
@@ -143,7 +143,17 @@ var _hmt = _hmt || [];
 <p>4.注意缩进操作，文档的结构清晰明了。</p>
 <p>5.body里面的内容，最好都要有标签嵌套。 </p>
 <p>6.内容不可以写在head，html等地方。</p>
-<p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%885.11.48.png?imageView2/2/w/203/h/203&amp;e=1448616355&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:HsgHJJw1jnml3H9B_e3yJCgYcus" alt=""></p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%885.11.48.png?imageView2/2/w/203/h/203&amp;e=1448616355&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:HsgHJJw1jnml3H9B_e3yJCgYcus" alt=""></p>
 <hr>
 <p>#body标签</p>
 <p>1.body标签是html文档的可视化区域</p>
@@ -156,7 +166,18 @@ var _hmt = _hmt || [];
 <p>3.div的默认高度是0px。有可见内容会撑开容器高度。</p>
 <p> <strong><em>注意事项</em></strong></p>
 <p>1.div是双标签,注意闭合。</p>
-<p>2.div的默认高度是0px。没有内容是不可见的。<br> <img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.11.59.png?imageView2/2/w/203/h/203&amp;e=1448622793&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:N9Q-TIJOq4ThfmVUD1jyniqUj2o" alt=""></p>
+<p>2.div的默认高度是0px。没有内容是不可见的。</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>div标签<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span>&gt;</span>我是div标签<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p> <img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.11.59.png?imageView2/2/w/203/h/203&amp;e=1448622793&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:N9Q-TIJOq4ThfmVUD1jyniqUj2o" alt=""></p>
 <hr>
 <p>#css</p>
 <p>1.css是层叠样式表。</p>
@@ -165,7 +186,21 @@ var _hmt = _hmt || [];
 <p>第一种引入方式：行间样式<br>优点：可以直接作用于标签，不会影响到其他标签。有冲突的css样式，优先级最高。 缺点：不能重复使用。影响html文档。影响阅读。 </p>
 <p>第二种引入方式：html文档内容引入： 优点：在head标签内引入style区域，不会影响body标签结构，有点内容，样式分离的味道。 缺点：不能重复使用，优先级低于行间样式。 </p>
 <p>第三种引入方式：外部引入方式： 优点：完全的内容，样式分离，可以和其它html文档共享css文件。 缺点：会发生一次请求，浏览器渲染html的时候，会请求样式。内部的样式就不会发生请求。</p>
-<p><strong><em>推荐</em></strong></p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>css语法与引入<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">""</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+
+        </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">" "</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p><strong><em>推荐</em></strong></p>
 <p>外部引入方式，如图：</p>
 <p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%887.19.30.png?imageView2/2/w/203/h/203&amp;e=1448623204&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:wv0GgMQh81ZPEv1ShWfwDijhghw" alt=""></p>
 <hr>
@@ -185,7 +220,31 @@ var _hmt = _hmt || [];
 <p>5.background的复合写法：</p>
 <p>background:red url() 0px 0px no-repeat;</p>
 <p>没有顺序要求。推荐这种顺序。复合写法中background-position要求写两个值。</p>
-<p><strong><em>注意事项</em></strong></p>
+<pre><code><span class="xml"><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>css背景操作<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"index.css"</span>/&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"div2"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+
+#div1</span><span class="expression">{
+    <span class="variable">width</span>:300<span class="variable">px</span>;
+    <span class="variable">height</span>:300<span class="variable">px</span>;
+    <span class="variable">background-image</span>:<span class="variable">url</span>(<span class="string">"https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/super/whfpf%3D425%2C260%2C50/sign=f5d31d65d339b6004d9b5cf78f6d0118/dbb44aed2e738bd45301acb7a78b87d6277ff910.jpg"</span>);
+    <span class="variable">background-position</span>: <span class="variable">-</span>100<span class="variable">px</span> 0;
+}</span><span class="xml">
+#div2</span><span class="expression">{
+    <span class="variable">width</span>:200<span class="variable">px</span>;
+    <span class="variable">height</span>:400<span class="variable">px</span>;
+    <span class="variable">background-color</span>:<span class="variable">rgb</span>(255,182,257);
+}</span><span class="xml">        </span>
+</code></pre><p><strong><em>注意事项</em></strong></p>
 <p>background的样式不会影响到容器的宽高，内容。！！！！！<br><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.07.51.png?imageView2/2/w/203/h/203&amp;e=1448626124&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:hOLLEPMv21r4F-rNjcZKuR-YMWY" alt=""><br><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.08.06.png?imageView2/2/w/203/h/203&amp;e=1448626176&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:yjeB5413uSULd_yzSyfYgpUDzW4" alt=""></p>
 <hr>
 <p>#padding内边距</p>
@@ -201,7 +260,19 @@ var _hmt = _hmt || [];
 <p>padding:0px 0px 0px;上 左右 下；</p>
 <p>padding:0px 0px;上下 左右；</p>
 <p>padding:0px;上右下左。    </p>
-<h2 id=""><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.39.43.png?imageView2/2/w/203/h/203&amp;e=1448628194&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:zUOj9dGod-eFTV5a_DSe8P9Q1Lc" alt=""></h2><p>#margin外边距</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>padding操作<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"index.css"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width:200px;height:200px;padding:-10px;background:red;"</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><h2 id=""><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.39.43.png?imageView2/2/w/203/h/203&amp;e=1448628194&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:zUOj9dGod-eFTV5a_DSe8P9Q1Lc" alt=""></h2><p>#margin外边距</p>
 <p>1.margin外边距，作用于容器父级标签元素和相邻标签元素，对自身和内容没有影响。</p>
 <p>margin-top:;外上边距,容器外上侧与相邻标签的距离。</p>
 <p>margin-right:;外右边距,容器外右侧与相邻标签的距离。</p>
@@ -214,7 +285,19 @@ var _hmt = _hmt || [];
 <p>margin:0px 0px 0px;上 左右 下；</p>
 <p>margin:0px 0px;上下 左右；</p>
 <p>margin:0px;上右下左。    </p>
-<p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.40.17.png?imageView2/2/w/203/h/203&amp;e=1448628098&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:se7dhUuoX75eoA8EzXxVb_kkP2U" alt=""></p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>margin操作<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"index.css"</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width:200px;height:200px;margin-left:-10px;background:red;"</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p><img src="http://7xoo76.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202015-11-26%20%E4%B8%8B%E5%8D%888.40.17.png?imageView2/2/w/203/h/203&amp;e=1448628098&amp;token=MnJTZt_f2r2fJuDyVFDo_DrhmPJX-XDb_aoXmy9S:se7dhUuoX75eoA8EzXxVb_kkP2U" alt=""></p>
 <hr>
 <p>（未完待续…）</p>
   
