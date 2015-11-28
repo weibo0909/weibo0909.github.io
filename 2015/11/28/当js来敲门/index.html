@@ -101,10 +101,10 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/27/当js来敲门/" title="当js来敲门" itemprop="url">当js来敲门</a>
+      <a href="/2015/11/28/当js来敲门/" title="当js来敲门" itemprop="url">当js来敲门</a>
   </h1>
   <p class="article-time">
-    <time datetime="2015-11-27T13:49:10.000Z" itemprop="datePublished">2015-11-27</time>
+    <time datetime="2015-11-28T01:44:58.000Z" itemprop="datePublished">2015-11-28</time>
   </p>
 </header>
 	<div class="article-content">
@@ -122,7 +122,7 @@ var _hmt = _hmt || [];
 <p>2.给函数赋值</p>
 <p>如    </p>
 <pre><code><span class="variable"><span class="keyword">var</span> a</span>=<span class="number">0</span>;-----相当于-----<span class="variable"><span class="keyword">var</span> a;
-                        a</span>=<span class="number">0</span>;
+                                    a</span>=<span class="number">0</span>;
 </code></pre><p>###函数的作用域</p>
 <p>只有函数才能生成局部变量或作用域</p>
 <p>全局变量可以在任何地方访问<br>函数内部的变量，对外是不可见的<br>函数内部可以访问外部函数的变量</p>
@@ -151,14 +151,25 @@ f ()
      <span class="keyword">var</span> max=<span class="number">10</span>;
      <span class="keyword">var</span> fn2=<span class="function"><span class="keyword">function</span>(<span class="params">num</span>)</span>{
         <span class="keyword">if</span> (num&gt;max) {
-             <span class="built_in">console</span>.log(max),                             <span class="built_in">console</span>.log(num);
+             <span class="built_in">console</span>.log(max);
+                                                              <span class="built_in">console</span>.log(num);
+
          };
      }
      <span class="keyword">return</span> fn2;
 }
  <span class="keyword">var</span> news=fn();
  news(<span class="number">20</span>);
-</code></pre><p> <strong><em>return的默认值为undefined</em></strong></p>
+</code></pre><p>我们来解析一下该程序的运行流程：</p>
+<p>先看外部函数声明fn，如果fn执行的话它的最后得到结果是return fn2;也就是说fn的返回值为函数表达式为fn2。接下来我们再看看fn2如果执行的话会做什么。我们可以看到 var fn2=function(num)，fn2里有个参数num，这就需要我们注意了，待fn2执行时要记得把里面的参数传到程序中。</p>
+<p>好接着看fn2内部都有什么执行内容？if语句表示判断，如果参数num大于max则执行下部程序，好接下来我们就要找max的值，在函数表达式中我们并没有找到关于max的赋值语句，那再看一下表达式外部的声明函数fn，我们会发现    var max=10;哎，找到max的值了，10.<br>好接着看判断语句if内部究竟做了什么？console.log(max);console.log(num);打印两个值max，num。好，我们知道这个程序是干什么的了就好办了。</p>
+<p>再看函数声明fn外部    </p>
+<pre><code><span class="keyword">var</span> <span class="keyword">news</span>=fn();
+<span class="keyword">news</span>(20);
+</code></pre><p>首先呢，定义一个变量叫news，并把fn执行后的结果赋值给他，那么根据上面的解析，fn执行后的结果就是返回函数表达式fn2喽，所以就等于把函数表达式fn2赋值给news了。</p>
+<p>其次再解析     news(20)干了什么？news(20)就相当于fn2(20)这点应该没疑问。    作为参数的20要取代函数表达式里所有的num，看一下if判断语句if(20&gt;10),哎，成立。那么执行接下来的内部程序，打印出max和num的值，也就是10和20。</p>
+<p>好，本段例题解析结束。关于return我们需要注意的是：</p>
+<p> <strong><em>return的默认值为undefined</em></strong></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -168,7 +179,7 @@ f ()
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/11/27/当js来敲门/" data-title="当js来敲门 | Sunday" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/11/28/当js来敲门/" data-title="当js来敲门 | Sunday" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
