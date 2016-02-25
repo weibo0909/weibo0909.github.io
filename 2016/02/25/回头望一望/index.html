@@ -4,24 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>当js来敲门2 | Sunday</title>
+    <title>回头望一望 | Sunday</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="魏传波">
-    
-    <meta name="description" content="js大课堂杂谈数据类型1、检测数据类型我们通常会用typeof，但，typeof只能检测基本的数据类型，如
-var num = 12
-var str = &#39;12&#39;
-var null = null;
-var boo=true;
-var un=undefined
-var fn = function ()">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="sear" />
-    <meta name="twitter:title" content="当js来敲门2 | Sunday" />
+    <meta name="twitter:title" content="回头望一望 | Sunday" />
       
     
     
@@ -105,10 +97,10 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/08/当js来敲门2/" title="当js来敲门2" itemprop="url">当js来敲门2</a>
+      <a href="/2016/02/25/回头望一望/" title="回头望一望" itemprop="url">回头望一望</a>
   </h1>
   <p class="article-time">
-    <time datetime="2015-12-08T00:56:24.000Z" itemprop="datePublished">2015-12-08</time>
+    <time datetime="2016-02-25T08:00:49.000Z" itemprop="datePublished">2016-02-25</time>
   </p>
 </header>
 	<div class="article-content">
@@ -116,52 +108,10 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#js大课堂"><span class="toc-number">1.</span> <span class="toc-text">js大课堂</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#杂谈"><span class="toc-number">1.1.</span> <span class="toc-text">杂谈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">1.1.2.</span> <span class="toc-text">对象</span></a></li></ol></li></ol></li></ol>
+		
 		</div>
 		
-		<h1 id="js大课堂">js大课堂</h1><h2 id="杂谈">杂谈</h2><h3 id="数据类型">数据类型</h3><p>1、检测数据类型我们通常会用typeof，但，typeof只能检测基本的数据类型，如</p>
-<pre><code><span class="keyword">var</span> num = <span class="number">12</span>
-<span class="keyword">var</span> str = <span class="string">'12'</span>
-<span class="keyword">var</span> <span class="literal">null</span> = <span class="literal">null</span>;
-<span class="keyword">var</span> boo=<span class="literal">true</span>;
-<span class="keyword">var</span> un=<span class="literal">undefined</span>
-<span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="comment">// body...</span>
-}<span class="built_in">console</span>.log(<span class="keyword">typeof</span>(num),<span class="keyword">typeof</span>(str),<span class="keyword">typeof</span>(<span class="literal">null</span>),<span class="keyword">typeof</span>(boo),type(un),type(fn))
-</code></pre><p>这样我们可以检测出这几个基本的值类型的属性number,string,object boolean,undefined,function(ps:function属于复杂的数据类型)</p>
-<p>2、但是一旦遇到复杂的数据类型object,typeof就会傻傻分不清。</p>
-<pre><code><span class="variable"><span class="keyword">var</span> obj</span> = {}
-<span class="variable"><span class="keyword">var</span> arr</span> = []
-<span class="variable"><span class="keyword">var</span> isNone</span> = <span class="literal">null</span>;
-</code></pre><p>他们的类型都会是object，    </p>
-<hr>
-<h3 id="对象">对象</h3><p>什么是对象？对象是属性的集合。<br>属性？</p>
-<pre><code><span class="tag">var</span> link =document.<span class="function"><span class="title">querySelectorAll</span><span class="params">(<span class="string">'a'</span>)</span></span>
-<span class="tag">var</span> text =document.<span class="function"><span class="title">querySelectorAll</span><span class="params">(<span class="string">'input'</span>)</span></span>
-
-console.<span class="function"><span class="title">log</span><span class="params">(link[<span class="number">0</span>].href)</span></span>
-console.<span class="function"><span class="title">log</span><span class="params">(link[<span class="number">0</span>][<span class="string">'href'</span>])</span></span>
-</code></pre><p>herf作为link的属性，读取对当前对象的属性 . 和 [],<strong><em>注意</em></strong></p>
-<p>用[]别忘了加引号’’</p>
-<p>我们新建一个对象</p>
-<pre><code><span class="keyword">var</span> obj={
-num:<span class="number">1</span>,
-str:<span class="string">'123'</span>,
-fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="keyword">return</span> <span class="string">'早上好'</span>;
-},
-on:<span class="literal">false</span>
-}
-<span class="built_in">console</span>.log(obj.fn)<span class="comment">//**注意**返回函数表达式</span>
-<span class="built_in">console</span>.log(obj.fn())<span class="comment">//返回函数表达式结果</span>
-</code></pre><p>枚举语句</p>
-<pre><code><span class="keyword">for</span> (var i <span class="keyword">in</span> obj) {
-<span class="built_in">console</span>.log(obj[i])
-<span class="built_in">document</span>.write(<span class="string">'属性名:'</span> + i +<span class="string">'属性值:'</span>+obj[i]+<span class="string">'&lt;br/    &gt;'</span>)
-};
-<span class="regexp">//</span>***建议***<span class="keyword">for</span> <span class="keyword">in</span> 不要对数组循环，因为<span class="keyword">for</span> <span class="keyword">in</span> 的顺序是不固定的
-<span class="regexp">//</span><span class="keyword">for</span> <span class="keyword">in</span> 遍历对象属性语句，枚举语句
-</code></pre>  
+		  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -170,7 +120,7 @@ on:<span class="literal">false</span>
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/12/08/当js来敲门2/" data-title="当js来敲门2 | Sunday" data-tsina="rtyt" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/02/25/回头望一望/" data-title="回头望一望 | Sunday" data-tsina="rtyt" class="share clearfix">
   </div>
 
 </div>
@@ -179,19 +129,11 @@ on:<span class="literal">false</span>
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/02/25/回头望一望/" title="回头望一望">
-  <strong>新一篇:</strong><br/>
-  <span>
-  回头望一望</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/12/07/当js来敲门/"  title="当js来敲门1">
+<a href="/2015/12/08/当js来敲门2/"  title="当js来敲门2">
  <strong>旧一篇:</strong><br/> 
- <span>当js来敲门1
+ <span>当js来敲门2
 </span>
 </a>
 </div>
@@ -201,7 +143,7 @@ on:<span class="literal">false</span>
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="当js来敲门2" data-thread-key="当js来敲门2" data-author-key="魏传波" data-url="http://yoursite.com/post/当js来敲门2"></div>
+	<div class="ds-thread" data-title="回头望一望" data-thread-key="回头望一望" data-author-key="魏传波" data-url="http://yoursite.com/post/回头望一望"></div>
 	
 </section>
 
