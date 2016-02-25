@@ -108,7 +108,7 @@ var _hmt = _hmt || [];
       <a href="/2016/02/25/回头望一望/" title="回头望一望" itemprop="url">回头望一望</a>
   </h1>
   <p class="article-time">
-    <time datetime="2016-02-25T13:38:47.000Z" itemprop="datePublished">2016-02-25</time>
+    <time datetime="2016-02-25T13:41:50.000Z" itemprop="datePublished">2016-02-25</time>
   </p>
 </header>
 	<div class="article-content">
@@ -116,7 +116,7 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#html的简单回顾"><span class="toc-number">1.</span> <span class="toc-text">html的简单回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题标签"><span class="toc-number">1.0.1.</span> <span class="toc-text">标题标签</span></a></li></ol></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#html的简单回顾"><span class="toc-number">1.</span> <span class="toc-text">html的简单回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#meta"><span class="toc-number">1.1.</span> <span class="toc-text">meta</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用标签复习"><span class="toc-number">1.2.</span> <span class="toc-text">常用标签复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题标签"><span class="toc-number">1.2.1.</span> <span class="toc-text">标题标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#段落标签"><span class="toc-number">1.2.2.</span> <span class="toc-text">段落标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#锚点链接_a_超链接"><span class="toc-number">1.2.3.</span> <span class="toc-text">锚点链接 a 超链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#img图片"><span class="toc-number">1.2.4.</span> <span class="toc-text">img图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-number">1.2.5.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格"><span class="toc-number">1.2.6.</span> <span class="toc-text">表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单"><span class="toc-number">1.2.7.</span> <span class="toc-text">表单</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
 		<p>经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！</p>
@@ -135,7 +135,7 @@ var _hmt = _hmt || [];
 <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </code></pre><p>还好，基本格式没忘。。。</p>
 <p><strong><em>在head里面有（title script link style meta base）几个标签</em></strong></p>
-<p>##meta<br>meta除了解析编码格式还有以下应用：</p>
+<h2 id="meta">meta</h2><p>meta除了解析编码格式还有以下应用：</p>
 <pre><code>&lt;meta <span class="property">name</span>=<span class="string">"Keywords"</span> content=<span class="string">"我去,哈哈"</span>/&gt;
 </code></pre><p>这行代码的意思是声明此网站中关键词，便于被搜索，关键词之间用，隔开。</p>
 <pre><code>&lt;meta <span class="property">name</span>=<span class="string">"Description"</span> content=<span class="string">"我们网站杠杠的"</span>/&gt;
@@ -149,11 +149,9 @@ var _hmt = _hmt || [];
 <pre><code>&lt;meta <span class="property">name</span>=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>/&gt;
 </code></pre><p>这行代码是针对国内双核浏览器来说，打开html文档是优先用webkit内核浏览器，最大限度地解决兼容性问题。</p>
 <p><strong>meta还有一些手机端的用法就不再介绍了</strong></p>
-<p>##常用标签复习</p>
-<h3 id="标题标签">标题标签</h3><p>H1~H6</p>
+<h2 id="常用标签复习">常用标签复习</h2><h3 id="标题标签">标题标签</h3><p>H1~H6</p>
 <p>标题标签一共有6个，h1、h2、h3、h4、h5、h6分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。是双标签，并且依据重要性递减。h1是最高的等级。字体也是依序变小。有默认的margin。</p>
-<p>###段落标签</p>
-<ul>
+<h3 id="段落标签">段落标签</h3><ul>
 <li><p>p，双标签，段落标签，有默认margin。</p>
 </li>
 <li><p>q，双标签，短文本引用 比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<q>标签是你所需要的</q>。</p>
@@ -179,8 +177,7 @@ var _hmt = _hmt || [];
 <li>em strong</li>
 </ul>
 <p>两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调</p>
-<p>###锚点链接 a 超链接</p>
-<ul>
+<h3 id="锚点链接_a_超链接">锚点链接 a 超链接</h3><ul>
 <li><p>href属性后面加上锚点链接地址，若值为#，点击有回到顶部的效果。</p>
 </li>
 <li><p>title属性，值为提示内容，当鼠标悬浮在锚点链接上时，弹出提示</p>
@@ -188,8 +185,7 @@ var _hmt = _hmt || [];
 <li><p>target，新窗口的打开方式。打开一个新的窗口or在原来网页窗口跳转</p>
 </li>
 </ul>
-<p>###img图片</p>
-<ul>
+<h3 id="img图片">img图片</h3><ul>
 <li><p>src 图像的路径位置</p>
 </li>
 <li><p>title 提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)</p>
@@ -199,8 +195,7 @@ var _hmt = _hmt || [];
 </code></pre><p>  <img src="http://img3.imgtn.bdimg.com/it/u=1860375833,3108624146&amp;fm=21&amp;gp=0.jpg" alt="红心海贼团"></p>
 </li>
 </ul>
-<p>###列表</p>
-<p>列表都是组合标签，使用一定要严格符合规范。</p>
+<h3 id="列表">列表</h3><p>列表都是组合标签，使用一定要严格符合规范。</p>
 <ul>
 <li><p>无序列表 ul li</p>
 <pre><code><span class="tag">&lt;ul&gt;</span>
@@ -227,8 +222,7 @@ var _hmt = _hmt || [];
 <span class="tag">&lt;/dl&gt;</span>
 </code></pre></li>
 </ul>
-<p>###表格</p>
-<ul>
+<h3 id="表格">表格</h3><ul>
 <li><p>table  tbody这个标签基本上不怎么用了 </p>
 </li>
 <li><p>tr 表格的一行</p>
@@ -256,8 +250,7 @@ var _hmt = _hmt || [];
 <pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">summary</span>=<span class="value">"学生成绩的排列"</span>&gt;</span><span class="tag">&lt;/<span class="title">table</span>&gt;</span>
 </code></pre></li>
 </ul>
-<p>###表单</p>
-<ul>
+<h3 id="表单">表单</h3><ul>
 <li><p>from</p>
 </li>
 <li><p>action属性 输入的数据被传送到的地址,比如一个PHP页面(test.php)。</p>
