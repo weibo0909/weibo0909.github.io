@@ -9,6 +9,13 @@
     
     <meta name="author" content="魏传波">
     
+    <meta name="description" content="经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！html的简单回顾1.首先我们先创建一个名为demo.html的html文档
+2.声明文档解析的格式
+3.基本的结构
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;html&amp;gt;
+  ">
+    
     
     
     <meta name="twitter:card" content="summary" />
@@ -100,7 +107,7 @@ var _hmt = _hmt || [];
       <a href="/2016/02/25/回头望一望/" title="回头望一望" itemprop="url">回头望一望</a>
   </h1>
   <p class="article-time">
-    <time datetime="2016-02-25T08:00:49.000Z" itemprop="datePublished">2016-02-25</time>
+    <time datetime="2016-02-25T13:31:28.000Z" itemprop="datePublished">2016-02-25</time>
   </p>
 </header>
 	<div class="article-content">
@@ -108,10 +115,214 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！"><span class="toc-number">1.</span> <span class="toc-text">经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#html的简单回顾"><span class="toc-number"></span> <span class="toc-text">html的简单回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标题标签"><span class="toc-number">1.</span> <span class="toc-text">标题标签</span></a></li></ol>
 		</div>
 		
-		  
+		<h3 id="经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！">经过漫长的假期，大概已经消耗了我年前积攒的大部分功力，为了确保自己不再重回小白，简单梳理一下知识很重要！！！</h3><h1 id="html的简单回顾">html的简单回顾</h1><p>1.首先我们先创建一个名为demo.html的html文档</p>
+<p>2.声明文档解析的格式</p>
+<p>3.基本的结构</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>html文档<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="comment">&lt;!--title里为标题，必不可少，body内为显示可视内容，这段文字为注释--&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>还好，基本格式没忘。。。</p>
+<p><strong><em>在head里面有（title script link style meta base）几个标签</em></strong></p>
+<p>##meta<br>meta除了解析编码格式还有以下应用：</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"Keywords"</span> content=<span class="string">"我去,哈哈"</span>/&gt;
+</code></pre><p>这行代码的意思是声明此网站中关键词，便于被搜索，关键词之间用，隔开。</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"Description"</span> content=<span class="string">"我们网站杠杠的"</span>/&gt;
+</code></pre><p>这行代码是对网站的基本描述，为一段通顺的话，一般不超过150个字符。</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"author"</span> content=<span class="string">"Sunday"</span>/&gt;
+</code></pre><p>这行代码是网页作者的信息。    </p>
+<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"3,http://www.baidu.com"</span>/&gt;</span>
+</code></pre><p>这行代码是在网页打开后三秒重新加载后面链接的地址网页。</p>
+<pre><code><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"X-UA-Compatible"</span> <span class="attribute">content</span>=<span class="value">"IE=edge,chrome=1"</span> /&gt;</span>
+</code></pre><p>这行代码是打开此html文档是优先用IE的edge版本或谷歌最新版浏览器，最大限度地解决兼容性问题。</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>/&gt;
+</code></pre><p>这行代码是针对国内双核浏览器来说，打开html文档是优先用webkit内核浏览器，最大限度地解决兼容性问题。</p>
+<p><strong>meta还有一些手机端的用法就不再介绍了</strong></p>
+<p>##常用标签复习</p>
+<h3 id="标题标签">标题标签</h3><p>H1~H6</p>
+<p>标题标签一共有6个，h1、h2、h3、h4、h5、h6分别为一级标题、二级标题、三级标题、四级标题、五级标题、六级标题。是双标签，并且依据重要性递减。h1是最高的等级。字体也是依序变小。有默认的margin。</p>
+<p>###段落标签</p>
+<ul>
+<li><p>p，双标签，段落标签，有默认margin。</p>
+</li>
+<li><p>q，双标签，短文本引用 比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<q>标签是你所需要的</q>。</p>
+</li>
+<li><p>blockquote 长文本引用</p>
+</li>
+<li><p>address 为页面加入地址信息 <address>上海市松江区丽德创业园</address> 样式为斜体</p>
+</li>
+<li><p>code 在网页中显示一些计算机专业的编程代码，当代码为一行代码时，你就可以使用code标签了 <code>var i = 0;</code></p>
+</li>
+<li><p>pre 预格式化的文本 要插入多行代码时不能使用code标签，如果是多行代码，可以使用pre标签，如</p>
+</li>
+</ul>
+<pre>
+    var i=0;
+    function haha(){
+        console.log(i)    
+    }
+    haha()
+</pre>
+
+<ul>
+<li>em strong</li>
+</ul>
+<p>两者在强调的语气上有区别:em 表示强调，strong 表示更强烈的强调</p>
+<p>###锚点链接 a 超链接</p>
+<ul>
+<li><p>href属性后面加上锚点链接地址，若值为#，点击有回到顶部的效果。</p>
+</li>
+<li><p>title属性，值为提示内容，当鼠标悬浮在锚点链接上时，弹出提示</p>
+</li>
+<li><p>target，新窗口的打开方式。打开一个新的窗口or在原来网页窗口跳转</p>
+</li>
+</ul>
+<p>###img图片</p>
+<ul>
+<li><p>src 图像的路径位置</p>
+</li>
+<li><p>title 提供在图像可见时对图像的描述(鼠标滑过图片时显示的文本)</p>
+</li>
+<li><p>alt 指定图像的描述性文本，当图像不可见时（下载不成功时），可看到该属性指定的文本；</p>
+<pre><code>&lt;<span class="tag">img</span> src=<span class="string">"http://img3.imgtn.bdimg.com/it/u=1860375833,3108624146&amp;fm=21&amp;gp=0.jpg"</span> title=<span class="string">"红心海贼团"</span> alt=<span class="string">"红心海贼团"</span>/&gt;
+</code></pre><p>  <img src="http://img3.imgtn.bdimg.com/it/u=1860375833,3108624146&amp;fm=21&amp;gp=0.jpg" alt="红心海贼团"></p>
+</li>
+</ul>
+<p>###列表</p>
+<p>列表都是组合标签，使用一定要严格符合规范。</p>
+<ul>
+<li><p>无序列表 ul li</p>
+<pre><code><span class="tag">&lt;ul&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+</code></pre></li>
+<li><p>有序列表 ol li</p>
+<pre><code><span class="tag">&lt;ol&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+    <span class="tag">&lt;li&gt;</span><span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span>
+</code></pre></li>
+<li><p>自定义列表 dl dt dd</p>
+<pre><code><span class="tag">&lt;dl&gt;</span>
+    <span class="tag">&lt;dt&gt;</span><span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span><span class="tag">&lt;/dd&gt;</span>
+    <span class="tag">&lt;dt&gt;</span><span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span><span class="tag">&lt;/dd&gt;</span>
+    <span class="tag">&lt;dt&gt;</span><span class="tag">&lt;/dt&gt;</span>
+    <span class="tag">&lt;dd&gt;</span><span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span>
+</code></pre></li>
+</ul>
+<p>###表格</p>
+<ul>
+<li><p>table  tbody这个标签基本上不怎么用了 </p>
+</li>
+<li><p>tr 表格的一行</p>
+</li>
+<li><p>th 表格的头部的一个单元格，表格表头</p>
+</li>
+<li><p>td 表格的一个单元格</p>
+</li>
+</ul>
+<pre><code><span class="tag">&lt;table&gt;</span>
+    <span class="tag">&lt;tbody&gt;</span>
+        <span class="tag">&lt;tr&gt;</span>
+            <span class="tag">&lt;th&gt;</span><span class="tag">&lt;/th&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;/td&gt;</span>
+            <span class="tag">&lt;td&gt;</span><span class="tag">&lt;/td&gt;</span>
+        <span class="tag">&lt;/tr&gt;</span>
+    <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span>
+</code></pre><ul>
+<li><p>caption 表格标题</p>
+<pre><code><span class="tag">&lt;<span class="title">caption</span>&gt;</span>学生成绩<span class="tag">&lt;/<span class="title">caption</span>&gt;</span>
+</code></pre></li>
+<li><p>summary属性 表格的摘要 </p>
+<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">summary</span>=<span class="value">"学生成绩的排列"</span>&gt;</span><span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre></li>
+</ul>
+<p>###表单</p>
+<ul>
+<li><p>from</p>
+</li>
+<li><p>action属性 输入的数据被传送到的地址,比如一个PHP页面(test.php)。</p>
+</li>
+<li><p>method属性 数据传送的方式（get/post）</p>
+<pre><code>&lt;<span class="keyword">from</span> action=<span class="string">"data.php"</span> <span class="keyword">method</span>=<span class="string">"post"</span>&gt;&lt;/<span class="keyword">from</span>&gt;
+</code></pre></li>
+<li><p>input 输入框 text password </p>
+</li>
+<li><p>当type=”text”时，输入框为文本输入框</p>
+<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"text"</span> value=<span class="string">"登录框"</span> name=<span class="string">"username"</span>/&gt;
+</code></pre></li>
+<li><p>当type=”password”时, 输入框为密码输入框 </p>
+<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"password"</span> value=<span class="string">"密码框"</span> name=<span class="string">"password"</span>/&gt;
+</code></pre></li>
+<li><p>name 为文本框命名，以备后台程序ASP 、PHP使用</p>
+</li>
+<li><p>value 为文本输入框设置默认值。(一般起到提示作用)</p>
+</li>
+<li><p>单选框 复选框 radio checkbox</p>
+<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"radio"</span>/&gt;
+</code></pre><p>  男<input type="radio"></p>
+<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"checkbox"</span>/&gt;
+</code></pre><p>  香蕉<input type="checkbox"></p>
+</li>
+<li><p>当type=”radio”时，控件为单选框</p>
+</li>
+<li><p>当type=”checkbox”时，控件为复选框</p>
+</li>
+<li><p>value 提交数据到服务器的值（后台程序PHP使用）</p>
+</li>
+<li><p>name 为控件命名，以备后台程序ASP、PHP使用</p>
+</li>
+<li><p>checked 当设置checked 或 checked=”checked”时，该选项被默认选中</p>
+</li>
+<li><p>注意：同一组的单选按钮，name取值一定要一致，这样同一组的单选按钮才可以起到单选的作用</p>
+</li>
+</ul>
+<ul>
+<li>submit reset hidden button…</li>
+</ul>
+<ul>
+<li><p>label 为 input 元素定义标注（标记）</p>
+</li>
+<li><p>label元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上</p>
+</li>
+<li><p>标签的 for 属性应当与相关元素的 id 属性相同</p>
+</li>
+<li><pre><label for="male">Male</label>
+<input type="radio" name="sex" id="male"> </pre>
+</li>
+<li><p>for属性可把 label 绑定到另外一个元素。请把 “for” 属性的值设置为相关元素的 id 属性的值</p>
+</li>
+<li><p>textarea 文本域,禁止文本域扩大：resize:none;</p>
+</li>
+<li><p>cols属性 ：多行输入域的列数</p>
+</li>
+<li><p>rows ：多行输入域的行数</p>
+</li>
+<li><p>select 下拉列表框</p>
+</li>
+<li><p>multiple属性 可以实现多选功能  </p>
+</li>
+<li><p>option 下拉选项</p>
+</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
