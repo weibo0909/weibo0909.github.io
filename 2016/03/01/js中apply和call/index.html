@@ -4,22 +4,19 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>回顾~css篇 | Sunday</title>
+    <title>js中apply和call | Sunday</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="魏传波">
     
-    <meta name="description" content="css篇回顾css引入方式
-内联样式，行间样式，把css把css代码写在html标签中。
-优点：优先级最高，不易被其他样式影响。缺点：不利于代码的后期维护，有悖于分离思想，html看起来杂乱不堪。
-内部引入，把css代码用style标签包裹放在head标签内。
-优点：没有请求，适合单页面。缺点：不能">
+    <meta name="description" content="call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的，换句话说，就是为了改变函数体内部this 的指向。
+因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。二者的作用完全一样，只是接受参数的方式不太一样。">
     
     
     
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="sear" />
-    <meta name="twitter:title" content="回顾~css篇 | Sunday" />
+    <meta name="twitter:title" content="js中apply和call | Sunday" />
       
     
     
@@ -103,10 +100,10 @@ var _hmt = _hmt || [];
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/02/29/回顾-css篇/" title="回顾~css篇" itemprop="url">回顾~css篇</a>
+      <a href="/2016/03/01/js中apply和call/" title="js中apply和call" itemprop="url">js中apply和call</a>
   </h1>
   <p class="article-time">
-    <time datetime="2016-02-29T01:05:19.000Z" itemprop="datePublished">2016-02-29</time>
+    <time datetime="2016-03-01T09:21:24.000Z" itemprop="datePublished">2016-03-01</time>
   </p>
 </header>
 	<div class="article-content">
@@ -114,81 +111,49 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css篇回顾"><span class="toc-number">1.</span> <span class="toc-text">css篇回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css引入方式"><span class="toc-number">1.1.</span> <span class="toc-text">css引入方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.2.</span> <span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优先级"><span class="toc-number">1.3.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动"><span class="toc-number">1.4.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位"><span class="toc-number">1.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单位"><span class="toc-number">1.6.</span> <span class="toc-text">单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC"><span class="toc-number">1.7.</span> <span class="toc-text">BFC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC定义"><span class="toc-number">1.7.1.</span> <span class="toc-text">BFC定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC布局规则"><span class="toc-number">1.7.2.</span> <span class="toc-text">BFC布局规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC的生成条件"><span class="toc-number">1.7.3.</span> <span class="toc-text">BFC的生成条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">1.8.</span> <span class="toc-text">继承</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<h1 id="css篇回顾">css篇回顾</h1><h2 id="css引入方式">css引入方式</h2><ul>
-<li>内联样式，行间样式，把css把css代码写在html标签中。</li>
-<li>优点：优先级最高，不易被其他样式影响。缺点：不利于代码的后期维护，有悖于分离思想，html看起来杂乱不堪。</li>
-<li>内部引入，把css代码用style标签包裹放在head标签内。</li>
-<li>优点：没有请求，适合单页面。缺点：不能够复用样式</li>
-<li>外部引入，用link标签在head内引入外部css文件。</li>
-<li>缺点：多发送一次请求。优点：分离思想，规范化，模块化。</li>
-<li><p>@import url(‘xx.css’),xx.css是对应你的css 文件所在路径，写入正确的路径即完成导入。少用或不用。</p>
-<h2 id="选择器">选择器</h2></li>
-<li><p>标签选择器：直接作用于选择的标签元素，是一个集合a h p</p>
-</li>
-<li>id选择器：直接作用于叫该名称的标签元素，名称是唯一的，标签也是唯一的，是一个单数 #id</li>
-<li>父子选择器：又叫层级选择器。body div{   }</li>
-<li>类选择器：css写法.就像#。</li>
-<li>通配选择器：*，所有标签。</li>
-<li>分组选择器：html，body{width：100%；height：100%；}用于代码优化，把相同样式合并。</li>
-<li>伪类选择器： a的4个状态伪类：link visited hover active</li>
-<li>伪元素选择器：：：<h2 id="优先级">优先级</h2></li>
-</ul>
-<p>同等级以最后的为准，标签选择器优先级若为1 (a h p)，类选择器优先选择级则为100 (class)，id选择器优先选择级则为1000，行间样式最高级style；（优先级中的极品 ！important;不建议使用）</p>
-<ul>
-<li>群组选择器h1,.duanluo,#lianjie</li>
-<li>通配选择器*，常用功能清除默认格式</li>
-<li>通配选择器慎用，id选择器少用；</li>
-</ul>
-<h2 id="浮动">浮动</h2><ul>
-<li><p>Css样式的float浮动属性，用于设置标签对象（如：div标签盒子、span标签、a标签、em标签等html标签）的浮动布局，浮动也就是我们所说标签对象浮动居左靠左（float:left）和浮动居右靠右(float:right)。</p>
-</li>
-<li><p>Float常跟属性值left、right、none</p>
-<p>  1.Float:none 不使用浮动</p>
-<p>  2.Float:left 靠左浮动</p>
-<p>  3.Float:right 靠右浮动</p>
-<p>  float语法：<br>  float : none | left |right</p>
-<p>  参数值：<br>  none : 　对象不浮动<br>  left : 　对象浮在左边<br>  right : 　对象浮在右边</p>
-</li>
-</ul>
-<h2 id="定位">定位</h2><ul>
-<li><p>通过使用 position 属性，我们可以选择 4 种不同类型的定位，这会影响元素框生成的方式。常用的有3种</p>
-</li>
-<li><p>static<br>元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。</p>
-</li>
-<li>relative<br>元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。</li>
-<li>absolute<br>元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</li>
-<li>fixed<br>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。</li>
-</ul>
-<p><strong><em>提示：相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。</em></strong></p>
-<h2 id="单位">单位</h2><p>px em rem vh和vw</p>
-<ul>
-<li>px</li>
-<li>em 父级为基准，不好控制</li>
-<li>rem html根大小为基准，可控性强     </li>
-<li>vh和vw 手机端可视窗，如width为890px 则1vw为8.9px。height为480px，则1vh为4.8px，为1/100.</li>
-</ul>
-<h2 id="BFC">BFC</h2><h3 id="BFC定义">BFC定义</h3><p>　BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
-　</p>
-<h3 id="BFC布局规则">BFC布局规则</h3><ul>
-<li>内部的Box会在垂直方向，一个接一个地放置。</li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
-<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
-<li>BFC的区域不会与float box重叠。</li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
-<li>计算BFC的高度时，浮动元素也参与计算</li>
-</ul>
-<h3 id="BFC的生成条件">BFC的生成条件</h3><ul>
-<li>根元素</li>
-<li>float属性不为none</li>
-<li>position为absolute或fixed</li>
-<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
-<li>overflow不为visible</li>
-</ul>
-<p>（未完待续。。。）</p>
-<h2 id="继承">继承</h2>  
+		<p>call 和 apply 都是为了改变某个函数运行时的 context 即上下文而存在的，换句话说，就是为了改变函数体内部this 的指向。</p>
+<p>因为 JavaScript 的函数存在「定义时上下文」和「运行时上下文」以及「上下文是可以改变的」这样的概念。二者的作用完全一样，只是接受参数的方式不太一样。</p>
+<p>例如，有一个函数 func1 定义如下：</p>
+<pre><code><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span><span class="params">(arg1, arg2)</span> </span>{};
+</code></pre><p>就可以通过 </p>
+<pre><code>fu<span class="label">nc1</span>.<span class="keyword">call</span><span class="comment">(this, arg1, arg2)</span>; 
+</code></pre><p>或者 </p>
+<pre><code><span class="tag">func1</span><span class="class">.apply</span>(<span class="tag">this</span>, <span class="attr_selector">[arg1, arg2]</span>);
+</code></pre><p> 来调用。其中 this 是你想指定的上下文，他可以任何一个 JavaScript 对象(JavaScript 中一切皆对象)，call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。</p>
+<p> JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时，用 call，而不确定的时候，用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来便利所有的参数。</p>
+<p>在javascript OOP中，我们经常会这样定义：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">cat</span><span class="params">()</span></span>{}
+cat.prototype={    
+ food:<span class="string">"fish"</span>,    
+ say: <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{           
+         alert(<span class="string">"I love "</span>+<span class="keyword">this</span>.food);     
+         }
+ }
+ <span class="keyword">var</span> blackCat = <span class="keyword">new</span> cat;
+ blackCat.say(); 
+</code></pre><p> 但是如果我们有一个对象</p>
+<pre><code>whiteDog = {<span class="string">food:</span><span class="string">"bone"</span>}
+</code></pre><p> 我们不想对它重新定义say方法，那么我们可以通过call或apply用blackCat的say方法：</p>
+<pre><code><span class="tag">blackCat</span><span class="class">.say</span><span class="class">.call</span>(<span class="tag">whiteDog</span>);
+</code></pre><p>所以，可以看出call和apply是为了动态改变this而出现的，当一个object没有某个方法，但是其他的有，我们可以借助call或apply用其它对象的方法来操作。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>{
+    <span class="keyword">this</span>.name=<span class="string">'铁蛋'</span>;
+    <span class="keyword">this</span>.age=<span class="string">'20'</span>;
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">fnn</span><span class="params">()</span></span>{
+    fn.apply(<span class="keyword">this</span>);
+    <span class="keyword">this</span>.like=<span class="string">'apple'</span>        
+}
+
+<span class="keyword">var</span> pl=<span class="keyword">new</span> fn();
+<span class="keyword">var</span> he=<span class="keyword">new</span> fnn();
+
+alert(he.name)
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -197,7 +162,7 @@ var _hmt = _hmt || [];
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/02/29/回顾-css篇/" data-title="回顾~css篇 | Sunday" data-tsina="rtyt" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/03/01/js中apply和call/" data-title="js中apply和call | Sunday" data-tsina="rtyt" class="share clearfix">
   </div>
 
 </div>
@@ -206,11 +171,19 @@ var _hmt = _hmt || [];
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2016/03/01/回顾-css篇/" title="回顾~css篇">
+  <strong>新一篇:</strong><br/>
+  <span>
+  回顾~css篇</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2016/02/26/回头望一望/"  title="回顾~html篇">
+<a href="/2016/03/01/回顾-js/"  title="回顾~js">
  <strong>旧一篇:</strong><br/> 
- <span>回顾~html篇
+ <span>回顾~js
 </span>
 </a>
 </div>
@@ -220,7 +193,7 @@ var _hmt = _hmt || [];
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="回顾~css篇" data-thread-key="回顾-css篇" data-author-key="魏传波" data-url="http://yoursite.com/post/回顾-css篇"></div>
+	<div class="ds-thread" data-title="js中apply和call" data-thread-key="js中apply和call" data-author-key="魏传波" data-url="http://yoursite.com/post/js中apply和call"></div>
 	
 </section>
 

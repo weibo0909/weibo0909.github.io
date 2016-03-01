@@ -1,0 +1,436 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>回顾~js | Sunday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="魏传波">
+    
+    <meta name="description" content="Javascript知识点回顾javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。
+－ js的组成
+
+ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 ">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="sear" />
+    <meta name="twitter:title" content="回顾~js | Sunday" />
+      
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Sunday" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+
+  
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
+  
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sunday">Sunday</a></h1>
+				<h2 class="blog-motto">心有猛虎，细嗅蔷薇</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/01/回顾-js/" title="回顾~js" itemprop="url">回顾~js</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2016-03-01T08:48:03.000Z" itemprop="datePublished">2016-03-01</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript知识点回顾"><span class="toc-number">1.</span> <span class="toc-text">Javascript知识点回顾</span></a></li></ol>
+		</div>
+		
+		<h3 id="Javascript知识点回顾">Javascript知识点回顾</h3><p>javascript  浏览器脚本语言 最大的特点就是单线程了。JavaScript的主要用途是与用户互动，以及操作DOM。负责内容 样式 行为分离环节中的分离部分。</p>
+<p>－ js的组成</p>
+<ul>
+<li><p>ECMAScript 核心 几乎没有兼容问题 担任解析器的角色 处理我们的逻辑代码 </p>
+</li>
+<li><p>DOM  文档对象模型；文档指的就是网页；把网页变成一个JS可以操作的对象；给了JS可以操作页面元素的能力；document;有一些兼容性问题；</p>
+</li>
+<li><p>BOM 浏览器对象模型；给了JS操作浏览器的能力；window；有许多兼容性问题</p>
+</li>
+</ul>
+<p>－ js的引用</p>
+<p>－ 外部文件 script标签 src属性</p>
+<p>－ 内部 script标签区域 </p>
+<p>－ 注释方式 单行注释  多行 注释</p>
+<p>－ 数据类型 </p>
+<p>基本类型（primitive）</p>
+<p>1.Undefined</p>
+<p>在使用var声明变量，但未对其加以初始化时，这个变量的类型就是undefined，且其默认初始化值为undefined</p>
+<p>对未声明与初始化的变量，直接使用，那么这个变量的类型也是undefined，但是没有默认初始化值。</p>
+<p>type test;//undefined  直接调用就会报错</p>
+<p>2.Null</p>
+<p>null类型的默认值是null，表示一个空对象指针,如果定义的变量准备在将来用于保存对象,那么就该将该变量初始化为null。</p>
+<p>3.Boolean</p>
+<p>该类型有两个值：true false</p>
+<p>Boolean()方法 可以转换其他数据类型为布尔值</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/94752-7c5eb2f781cbd6f6.png"></p>
+<p>4.Number</p>
+<p>整数 可以通过10进制 8进制 16进制表示</p>
+<p>浮点数 该数值必须包含一个小数点，小数点后面必须有一位数字，如果小数点后只有0，自动转换成整数</p>
+<p>浮点数占据的空间内存是内存的两倍，极大极小的数字会用e科学表示法。</p>
+<p>NaN </p>
+<p>1、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如任何数值除以0，本是不符合规范的，js里，这样的操作返回NaN（但是实际上，只有0除以0时返回NaN，其他则无穷值）。<br>    2、NaN有两个不同寻常的特点：任何涉及NaN的操作都会返回NaN，NaN值与任何值都不相等，包括本身。<br>    3、isNaN()函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如“10”这个字符串就可以转换为10，但是“blue”这个字符串则无法转换为数字，所以isNaN(“blue”)==true</p>
+<p>Number() 可以    任何类型</p>
+<p>parseInt()  parseFloat() 只用于字符串类型</p>
+<p>5.string </p>
+<p>‘’ “”单引号 双引号</p>
+<p>基本类型的特点：</p>
+<p>基本类型的值是不可变得</p>
+<p>复杂对象类型 Object 对象是属性和方法的集合</p>
+<p>基本类型以外 就是引用类型</p>
+<p>引用类型的特点</p>
+<p>引用类型的值是可变的</p>
+<p>－ 变量 var （let const）</p>
+<p>变量是一个杯子，它的类型是由它里面存放的东西决定的  </p>
+<p>可以通过 typeof</p>
+<p>命名规范 一般推荐驼峰式命名</p>
+<p>-语句 </p>
+<p>-运算符 </p>
+<p>() 括号 提升运算级别 优先运算</p>
+<p>＋＋  －－  递增 递减 有前置和后置</p>
+<p>前缀形式是先运算再赋值</p>
+<p>后缀形式是先赋值在运算</p>
+<p>！ &amp;&amp; || 逻辑非</p>
+<p>＊／％</p>
+<p>＋ 加法  拼接</p>
+<p>&lt;= &gt;= </p>
+<p>== != </p>
+<p>=== !==</p>
+<p>&lt; &gt;</p>
+<p>?: 三元条件表达式</p>
+<p>= += -=</p>
+<p>流程控制语句：</p>
+<p>if 最基本的条件判断语句</p>
+<p>switch </p>
+<p>?:</p>
+<p>for、while、do-while </p>
+<p>for-in 遍历对象</p>
+<p>forEach 遍历数组</p>
+<p>try catch</p>
+<p>width</p>
+<p>eval</p>
+<p>－ 作用域</p>
+<p>－ this</p>
+<p>this是Javascript语言的一个关键字。</p>
+<p>它代表函数运行时，自动生成的一个内部对象，只能在函数内部使用</p>
+<p>随着函数使用场合的不同，this的值会发生变化。但是有一个总的原则，那就是this指的是，调用函数的那个对象。</p>
+<ol>
+<li><p>普通函数调用</p>
+</li>
+<li><p>作为对象方法的调用</p>
+</li>
+<li><p>作为构造函数调用</p>
+</li>
+<li><p>apply() call()</p>
+</li>
+</ol>
+<p>－ “构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上</p>
+<p>用构造函数生成实例对象，有一个缺点，那就是无法共享属性和方法。</p>
+<ul>
+<li>继承</li>
+</ul>
+<p>对象之间的继承方法</p>
+<ol>
+<li>构造函数绑定</li>
+</ol>
+<p>使用call或apply方法，将父对象的构造函数绑定在子对象上</p>
+<p>任何一个prototype对象都有一个constructor属性，指向它的构造函数</p>
+<p>每一个实例也有一个constructor属性，默认调用prototype对象的constructor属性。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/03/01/回顾-js/" data-title="回顾~js | Sunday" data-tsina="rtyt" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/03/01/js中apply和call/" title="js中apply和call">
+  <strong>新一篇:</strong><br/>
+  <span>
+  js中apply和call</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2016/02/26/回头望一望/"  title="回顾~html篇">
+ <strong>旧一篇:</strong><br/> 
+ <span>回顾~html篇
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="回顾~js" data-thread-key="回顾-js" data-author-key="魏传波" data-url="http://yoursite.com/post/回顾-js"></div>
+	
+</section>
+
+
+</div>  
+    </div>
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>

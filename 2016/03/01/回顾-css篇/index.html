@@ -1,0 +1,490 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>回顾~css篇 | Sunday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="魏传波">
+    
+    <meta name="description" content="css篇回顾css引入方式
+内联样式，行间样式，把css把css代码写在html标签中。
+优点：优先级最高，不易被其他样式影响。缺点：不利于代码的后期维护，有悖于分离思想，html看起来杂乱不堪。
+内部引入，把css代码用style标签包裹放在head标签内。
+优点：没有请求，适合单页面。缺点：不能">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="sear" />
+    <meta name="twitter:title" content="回顾~css篇 | Sunday" />
+      
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Sunday" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+
+  
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
+  
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sunday">Sunday</a></h1>
+				<h2 class="blog-motto">心有猛虎，细嗅蔷薇</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/03/01/回顾-css篇/" title="回顾~css篇" itemprop="url">回顾~css篇</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2016-03-01T13:46:13.000Z" itemprop="datePublished">2016-03-01</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css篇回顾"><span class="toc-number">1.</span> <span class="toc-text">css篇回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#css引入方式"><span class="toc-number">1.1.</span> <span class="toc-text">css引入方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.2.</span> <span class="toc-text">选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优先级"><span class="toc-number">1.3.</span> <span class="toc-text">优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动"><span class="toc-number">1.4.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位"><span class="toc-number">1.5.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单位"><span class="toc-number">1.6.</span> <span class="toc-text">单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC"><span class="toc-number">1.7.</span> <span class="toc-text">BFC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC定义"><span class="toc-number">1.7.1.</span> <span class="toc-text">BFC定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC布局规则"><span class="toc-number">1.7.2.</span> <span class="toc-text">BFC布局规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFC的生成条件"><span class="toc-number">1.7.3.</span> <span class="toc-text">BFC的生成条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FONT"><span class="toc-number">1.8.</span> <span class="toc-text">FONT</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="css篇回顾">css篇回顾</h1><h2 id="css引入方式">css引入方式</h2><ul>
+<li>内联样式，行间样式，把css把css代码写在html标签中。</li>
+<li>优点：优先级最高，不易被其他样式影响。缺点：不利于代码的后期维护，有悖于分离思想，html看起来杂乱不堪。</li>
+<li>内部引入，把css代码用style标签包裹放在head标签内。</li>
+<li>优点：没有请求，适合单页面。缺点：不能够复用样式</li>
+<li>外部引入，用link标签在head内引入外部css文件。</li>
+<li>缺点：多发送一次请求。优点：分离思想，规范化，模块化。</li>
+<li><p>@import url(‘xx.css’),xx.css是对应你的css 文件所在路径，写入正确的路径即完成导入。少用或不用。</p>
+<h2 id="选择器">选择器</h2></li>
+<li><p>标签选择器：直接作用于选择的标签元素，是一个集合a h p</p>
+</li>
+<li>id选择器：直接作用于叫该名称的标签元素，名称是唯一的，标签也是唯一的，是一个单数 #id</li>
+<li>父子选择器：又叫层级选择器。body div{   }</li>
+<li>类选择器：css写法.就像#。</li>
+<li>通配选择器：*，所有标签。</li>
+<li>分组选择器：html，body{width：100%；height：100%；}用于代码优化，把相同样式合并。</li>
+<li>伪类选择器： a的4个状态伪类：link visited hover active</li>
+<li>伪元素选择器：：：<h2 id="优先级">优先级</h2></li>
+</ul>
+<p>同等级以最后的为准，标签选择器优先级若为1 (a h p)，类选择器优先选择级则为100 (class)，id选择器优先选择级则为1000，行间样式最高级style；（优先级中的极品 ！important;不建议使用）</p>
+<ul>
+<li>群组选择器h1,.duanluo,#lianjie</li>
+<li>通配选择器*，常用功能清除默认格式</li>
+<li>通配选择器慎用，id选择器少用；</li>
+</ul>
+<h2 id="浮动">浮动</h2><ul>
+<li><p>Css样式的float浮动属性，用于设置标签对象（如：div标签盒子、span标签、a标签、em标签等html标签）的浮动布局，浮动也就是我们所说标签对象浮动居左靠左（float:left）和浮动居右靠右(float:right)。</p>
+</li>
+<li><p>Float常跟属性值left、right、none</p>
+<p>  1.Float:none 不使用浮动</p>
+<p>  2.Float:left 靠左浮动</p>
+<p>  3.Float:right 靠右浮动</p>
+<p>  float语法：<br>  float : none | left |right</p>
+<p>  参数值：<br>  none : 　对象不浮动<br>  left : 　对象浮在左边<br>  right : 　对象浮在右边</p>
+</li>
+</ul>
+<h2 id="定位">定位</h2><ul>
+<li><p>通过使用 position 属性，我们可以选择 4 种不同类型的定位，这会影响元素框生成的方式。常用的有3种</p>
+</li>
+<li><p>static<br>元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。</p>
+</li>
+<li>relative<br>元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。</li>
+<li>absolute<br>元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</li>
+<li>fixed<br>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。</li>
+</ul>
+<p><strong><em>提示：相对定位实际上被看作普通流定位模型的一部分，因为元素的位置相对于它在普通流中的位置。</em></strong></p>
+<h2 id="单位">单位</h2><p>px em rem vh和vw</p>
+<ul>
+<li>px</li>
+<li>em 父级为基准，不好控制</li>
+<li>rem html根大小为基准，可控性强     </li>
+<li>vh和vw 手机端可视窗，如width为890px 则1vw为8.9px。height为480px，则1vh为4.8px，为1/100.</li>
+</ul>
+<h2 id="BFC">BFC</h2><h3 id="BFC定义">BFC定义</h3><p>　BFC(Block formatting context)直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
+　</p>
+<h3 id="BFC布局规则">BFC布局规则</h3><ul>
+<li>内部的Box会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠</li>
+<li>每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算</li>
+</ul>
+<h3 id="BFC的生成条件">BFC的生成条件</h3><ul>
+<li>根元素</li>
+<li>float属性不为none</li>
+<li>position为absolute或fixed</li>
+<li>display为inline-block, table-cell, table-caption, flex, inline-flex</li>
+<li>overflow不为visible</li>
+</ul>
+<h2 id="FONT">FONT</h2><ul>
+<li>再次认识font</li>
+</ul>
+<p><a href="http://www.cnblogs.com/fsjohnhuang/p/4310533.html#a32" target="_blank" rel="external">http://www.cnblogs.com/fsjohnhuang/p/4310533.html#a32</a></p>
+<ul>
+<li><p>盒模型</p>
+</li>
+<li><p>标准盒模型</p>
+</li>
+</ul>
+<p><img src="http://images.cnitblog.com/blog/347002/201409/121710262933336.jpg"></p>
+<p>外盒模型</p>
+<pre><code>元素空间宽度 = <span class="attribute">content</span> <span class="attribute">width</span> + <span class="attribute">padding</span> + <span class="attribute">border</span> + <span class="attribute">margin</span>的宽度
+
+元素空间高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">padding</span> + <span class="attribute">border</span> + <span class="attribute">margin</span>的高度
+</code></pre><p>  内盒模型</p>
+<pre><code>元素宽度 = <span class="attribute">content</span> <span class="attribute">width</span>  + <span class="attribute">padding</span> + <span class="attribute">border</span>的宽度
+
+元素高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">padding</span> + <span class="attribute">border</span>的高度
+</code></pre><p>－ IE盒模型 当IE6~8处于怪异模式下就会使用IE盒子模型，否则将使用W3C标准盒子模型。</p>
+<p><img src="http://images.cnitblog.com/blog/347002/201409/121710451993093.jpg"></p>
+<p>外盒模型</p>
+<pre><code>元素空间宽度 = <span class="attribute">content</span> <span class="attribute">width</span> + <span class="attribute">margin</span>的宽度
+
+元素空间高度 = <span class="attribute">content</span> <span class="attribute">height</span> + <span class="attribute">margin</span>的高度
+</code></pre><p>内盒模型</p>
+<pre><code>元素宽度 = <span class="attribute">content</span> <span class="attribute">width</span>
+
+元素高度 = <span class="attribute">content</span> <span class="attribute">height</span>
+</code></pre><p>－box-sizing IE8+</p>
+<p>box-sizing有三个值，默认是content-box（表示元素使用W3C盒子模型），而border-box（表示元素使用IE盒子模型），inherit（从父元素上继承）</p>
+<p>－float 浮动 </p>
+<p>具有包裹性 本意作用是做文字环绕 float布局只是歪打正着的产物</p>
+<ul>
+<li>清除浮动</li>
+</ul>
+<p>－使用带clear属性的空元素</p>
+<p>－使用CSS的overflow属性 给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动，另外在 IE6 中还需要触发 hasLayout ，例如为父元素设置容器宽高或设置 zoom:1。</p>
+<p>在添加overflow属性后，浮动元素又回到了容器层，把容器高度撑起，达到了清理浮动的效果。</p>
+<p>－给浮动的元素的容器添加浮动</p>
+<p>给浮动元素的容器也添加上浮动属性即可清除内部浮动，但是这样会使其整体浮动，影响布局，不推荐使用。</p>
+<p>-使用邻接元素处理 给浮动元素后面的元素添加clear属性。</p>
+<p>－使用CSS的:after伪元素 结合 zoom</p>
+<p>结合 :after 伪元素（注意这不是伪类，而是伪元素，代表一个元素之后最近的元素）和 IEhack ，可以完美兼容当前主流的各大浏览器，这里的 IEhack 指的是触发 hasLayout。</p>
+<p>给浮动元素的容器添加一个clearfix的class，然后给这个class添加一个:after伪元素实现元素末尾添加一个看不见的块元素（Block element）清理浮动。</p>
+<p>.clearfix:after{<br>  content: “.”;<br>  display: block;<br>  height: 0; <!--line-height:0--><br>  clear: both;<br>  visibility: hidden;<br>  }</p>
+<p>.clearfix {<br>  /<em> 触发 hasLayout </em>/<br>  zoom: 1;<br>}</p>
+<ul>
+<li>IE hack  有IE就有hack  hack主要是针对IE 浏览器</li>
+</ul>
+<p>所有 IE{property:value\9;}<br>大于或等于 IE 8{property:value\0;}<br>小于或等于 IE 7{*property:value;}<br>.IE 8/9{property:value\0;}<br>.IE 9{property:value\9\0;}<br>.IE 7{+property:value;}<br>.IE 6{_property:value;}<br>非 IE{property//:value;}</p>
+<p>－ zoom 定义缩放比例。不允许负值 有兼容问题 主要用于IE67浏览器 触发haslayout 达到清除浮动等功能</p>
+<p>zoom:1</p>
+<p>－ 垂直居中</p>
+<p>－ 使用绝对定位垂直居中</p>
+<p>兼容性最好 absolute结合margin 需要知道尺寸</p>
+<p><a href="http://www.cnblogs.com/dojo-lzz/p/4419596.html" target="_blank" rel="external">http://www.cnblogs.com/dojo-lzz/p/4419596.html</a></p>
+<p>-自动换行 </p>
+<p>word-wrap 是控制换行的</p>
+<p>break-word 是将强制换行 </p>
+<p>word-break 表明是否断开单词换行 面对长度较长单词</p>
+<p>break-all 允许断开单词换行</p>
+<p>white-space</p>
+<p>pre :空白会被浏览器保留。其行为方式类似 HTML 中的 pre 标签</p>
+<p>nowrap: 文本不会换行，文本会在在同一行上继续，直到遇到 br 标签为止</p>
+<p>pre-wrap: 保留空白符序列，但是正常地进行换行</p>
+<p>当文本溢出包含元素时发生的事情</p>
+<ul>
+<li>text-overflow: clip|ellipsis|string; </li>
+</ul>
+<p>clip默认值 超出裁剪<br>ellipsis 超出显示…</p>
+<p>－单行文本溢出显示省略号(…)</p>
+<p>overflow: hidden;<br>text-overflow:ellipsis;<br>white-space: nowrap; 不换行</p>
+<p>部分浏览器 需要带上width</p>
+<p>－多行文本溢出显示省略号(…) 仅支持webkit内核浏览器 移动端</p>
+<p>display: -webkit-box; 将对象作为弹性伸缩盒子模型显示<br>-webkit-box-orient: vertical; 伸缩盒对象的子元素的排列方式<br>-webkit-line-clamp: 3; 用来限制在一个块元素显示的文本的行数<br>overflow: hidden;</p>
+<p>利用 after</p>
+<p>p{position: relative; line-height: 20px; max-height: 40px;overflow: hidden;}<br>p::after{content: “…”; position: absolute; bottom: 0; right: 0; padding-left: 40px;</p>
+<p>-Opacity属性用来设置一个元素的透明度，取值范围是0~1之间，不可为负值。opacity取值为1是完全不透明，取值为0是完全透明</p>
+<p>opacity:0.5;<br>filter:alpha(opacity=50);/<em> IE 4+ </em>/  ||</p>
+<p>filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);  </p>
+<p>-ms-filter:”progid:DXImageTransform.Microsoft.Alpha(Opacity=50)”;  /<em>ie 8+</em>/ </p>
+<p>－Overflow </p>
+<p>overflow属性有四个值：visible (默认), </p>
+<p>hidden 将所有超出盒子的所有内容都给隐藏掉。</p>
+<p>scroll 始终出现滚动条</p>
+<p>auto 现代浏览器的默认属性 有超出内容 才有滚动条</p>
+<p>overflow-x</p>
+<p>overflow-y </p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/03/01/回顾-css篇/" data-title="回顾~css篇 | Sunday" data-tsina="rtyt" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/01/js中apply和call/"  title="js中apply和call">
+ <strong>旧一篇:</strong><br/> 
+ <span>js中apply和call
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="回顾~css篇" data-thread-key="回顾-css篇" data-author-key="魏传波" data-url="http://yoursite.com/post/回顾-css篇"></div>
+	
+</section>
+
+
+</div>  
+    </div>
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
