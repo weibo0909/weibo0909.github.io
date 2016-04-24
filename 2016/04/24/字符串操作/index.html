@@ -1,0 +1,445 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>字符串操作 | Sunday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="魏传波">
+    
+    <meta name="description" content="字符串的操作在js中非常频繁，也非常重要。以往看完书之后都能记得非常清楚，但稍微隔一段时间不用，便会忘得差不多，记性不好是硬伤啊。。。今天就对字符串的一些常用操作做个整理，一者加深印象，二者方便今后温习查阅。
+String对象属性
+(1) length属性
+length算是字符串中非常常用的一个属性">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="sear" />
+    <meta name="twitter:title" content="字符串操作 | Sunday" />
+      
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Sunday" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+
+  
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
+  
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sunday">Sunday</a></h1>
+				<h2 class="blog-motto">心有猛虎，细嗅蔷薇</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/24/字符串操作/" title="字符串操作" itemprop="url">字符串操作</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2016-04-24T07:43:32.000Z" itemprop="datePublished">2016-04-24</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		
+		</div>
+		
+		<p>字符串的操作在js中非常频繁，也非常重要。以往看完书之后都能记得非常清楚，但稍微隔一段时间不用，便会忘得差不多，记性不好是硬伤啊。。。今天就对字符串的一些常用操作做个整理，一者加深印象，二者方便今后温习查阅。</p>
+<p>String对象属性</p>
+<p>(1) length属性</p>
+<p>length算是字符串中非常常用的一个属性了，它的功能是获取字符串的长度。当然需要注意的是js中的中文每个汉字也只代表一个字符，这里可能跟其他语言有些不一样。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abc'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.length);
+</code></pre><p>(2) prototype属性</p>
+<p>prototype在面向对象编程中会经常用到，用来给对象添加属性或方法，并且添加的方法或属性在所有的实例上共享。因此也常用来扩展js内置对象，如下面的代码给字符串添加了一个去除两边空格的方法：</p>
+<pre><code><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+<span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s*|\s*$/g</span>, <span class="string">''</span>);
+}
+</code></pre><p>String对象方法</p>
+<p>1.获取类方法</p>
+<p>(1) charAt()</p>
+<pre><code>stringObject.<span class="function"><span class="title">charAt</span><span class="params">(index)</span></span>
+</code></pre><p>charAt()方法可用来获取指定位置的字符串，index为字符串索引值，从0开始到string.leng – 1，若不在这个范围将返回一个空字符串。如：</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcde'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.charAt(<span class="number">2</span>));     <span class="comment">//返回c</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.charAt(<span class="number">8</span>));     <span class="comment">//返回空字符串</span>
+</code></pre><p>(2) charCodeAt()</p>
+<pre><code>stringObject.<span class="function"><span class="title">charCodeAt</span><span class="params">(index)</span></span>
+</code></pre><p>charCodeAt()方法可返回指定位置的字符的Unicode编码。charCodeAt()方法与charAt()方法类似，都需要传入一个索引值作为参数，区别是前者返回指定位置的字符的编码，而后者返回的是字符子串。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcde'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.charCodeAt(<span class="number">0</span>));     <span class="comment">//返回97</span>
+</code></pre><p>(3) fromCharCode()</p>
+<pre><code>String.<span class="function"><span class="title">fromCharCode</span><span class="params">(numX,numX,…,numX)</span></span>
+</code></pre><p>fromCharCode()可接受一个或多个Unicode值，然后返回一个字符串。另外该方法是String 的静态方法，字符串中的每个字符都由单独的数字Unicode编码指定。</p>
+<pre><code>String.fromCharCode(<span class="number">97</span>, <span class="number">98</span>, <span class="number">99</span>, <span class="number">100</span>, <span class="number">101</span>)   <span class="comment">//返回    abcde</span>
+</code></pre><p>2.查找类方法</p>
+<p>(1) indexOf()</p>
+<pre><code>stringObject.<span class="function"><span class="title">indexOf</span><span class="params">(searchvalue,fromindex)</span></span>
+</code></pre><p>indexOf()用来检索指定的字符串值在字符串中首次出现的位置。它可以接收两个参数，searchvalue表示要查找的子字符串，fromindex表示查找的开始位置，省略的话则从开始位置进行检索。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdeabcde'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">'a'</span>));  <span class="comment">// 返回0</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">'a'</span>, <span class="number">3</span>));   <span class="comment">// 返回5</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.indexOf(<span class="string">'bc'</span>)); <span class="comment">// 返回1</span>
+</code></pre><p>(2) lastIndexOf()方法</p>
+<pre><code>stringObject.<span class="function"><span class="title">lastIndexOf</span><span class="params">(searchvalue,fromindex)</span></span>
+</code></pre><p>lastIndexOf()语法与indexOf()类似，它返回的是一个指定的子字符串值最后出现的位置，其检索顺序是从后向前。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdeabcde'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">'a'</span>));  <span class="comment">// 返回5</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.lastIndexOf(<span class="string">'a'</span>, <span class="number">3</span>));   <span class="comment">// 返回0 从第索引3的位置往前检索</span>
+</code></pre><p>console.log(str.lastIndexOf(‘bc’)); // 返回6<br>(3) search()方法</p>
+<pre><code>stringObject.<span class="function"><span class="title">search</span><span class="params">(substr)</span></span> 
+stringObject.<span class="function"><span class="title">search</span><span class="params">(regexp)</span></span>
+</code></pre><p>search()方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。它会返回第一个匹配的子字符串的起始位置，如果没有匹配的，则返回-1。</p>
+<pre><code>var <span class="built_in">str</span> = 'abcDEF';
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>('c'));   <span class="comment">//返回2</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>('d'));   <span class="comment">//返回-1</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>(/d/i));  <span class="comment">//返回3</span>
+</code></pre><p>(4) match()方法</p>
+<pre><code>stringObject.<span class="function"><span class="title">match</span><span class="params">(substr)</span></span> 
+stringObject.<span class="function"><span class="title">match</span><span class="params">(regexp)</span></span>
+</code></pre><p>match()方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</p>
+<p>如果参数中传入的是子字符串或是没有进行全局匹配的正则表达式，那么match()方法会从开始位置执行一次匹配，如果没有匹配到结果，则返回null。否则则会返回一个数组，该数组的第0个元素存放的是匹配文本，除此之外，返回的数组还含有两个对象属性index和input，分别表示匹配文本的起始字符索引和stringObject 的引用(即原字符串)。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'1a2b3c4d5e'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">match</span>(<span class="string">'h'</span>));    <span class="comment">//返回null</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">match</span>(<span class="string">'b'</span>));    <span class="comment">//返回["b", index:     3, input: "1a2b3c4d5e"]</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">match</span>(/b/));    <span class="comment">//返回["b", index:     3, input: "1a2b3c4d5e"]</span>
+</code></pre><p>如果参数传入的是具有全局匹配的正则表达式，那么match()从开始位置进行多次匹配，直到最后。如果没有匹配到结果，则返回null。否则则会返回一个数组，数组中存放所有符合要求的子字符串，并且没有index和input属性。</p>
+<pre><code>var str = <span class="string">'1a2b3c4d5e'</span>;
+<span class="built_in">console</span>.log(str.match(<span class="regexp">/h/g</span>));   <span class="regexp">//</span>返回<span class="literal">null</span>
+<span class="built_in">console</span>.log(str.match(<span class="regexp">/\d/g</span>));  <span class="regexp">//</span>返回[<span class="string">"1"</span>, <span class="string">"2"</span>,     <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>]
+</code></pre><p>3.截取类方法</p>
+<p>(1) substring()</p>
+<pre><code>stringObject.<span class="function"><span class="title">substring</span><span class="params">(start,end)</span></span>
+</code></pre><p>substring()是最常用到的字符串截取方法，它可以接收两个参数(参数不能为负值)，分别是要截取的开始位置和结束位置，它将返回一个新的字符串，其内容是从start处到end-1处的所有字符。若结束参数(end)省略，则表示从start位置一直截取到最后。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdefg'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">1</span>, <span class="number">4</span>));   <span class="comment">//返回bcd</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">1</span>));  <span class="comment">//返回bcdefg</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(-<span class="number">1</span>)); <span class="comment">//返回abcdefg，传入负值时会视为0</span>
+</code></pre><p>(2) slice()</p>
+<pre><code>stringObject.<span class="function"><span class="title">slice</span><span class="params">(start,end)</span></span>
+</code></pre><p>slice()方法与substring()方法非常类似，它传入的两个参数也分别对应着开始位置和结束位置。而区别在于，slice()中的参数可以为负值，如果参数是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdefg'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">1</span>, <span class="number">4</span>));   <span class="comment">//返回bcd</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(-<span class="number">3</span>, -<span class="number">1</span>)); <span class="comment">//返回ef</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(<span class="number">1</span>, -<span class="number">1</span>));  <span class="comment">//返回bcdef</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.slice(-<span class="number">1</span>, -<span class="number">3</span>)); <span class="comment">//返回空字符串，若传入的参数有问题，则返回空</span>
+</code></pre><p>(3) substr()</p>
+<pre><code>stringObject.<span class="function"><span class="title">substr</span><span class="params">(start,length)</span></span>
+</code></pre><p>substr()方法可在字符串中抽取从start下标开始的指定数目的字符。其返回值为一个字符串，包含从 stringObject的start（包括start所指的字符）处开始的length个字符。如果没有指定 length，那么返回的字符串包含从start到stringObject的结尾的字符。另外如果start为负数，则表示从字符串尾部开始算起。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdefg'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(<span class="number">1</span>, <span class="number">3</span>))   <span class="comment">//返回bcd</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(<span class="number">2</span>))  <span class="comment">//返回cdefg</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substr(-<span class="number">2</span>, <span class="number">4</span>))  <span class="comment">//返回fg，目标长度较大的话，以实际截取的长度为准</span>
+</code></pre><p>4.其他方法</p>
+<p>(1) replace()方法</p>
+<pre><code>stringObject.<span class="function"><span class="title">replace</span><span class="params">(regexp/substr,replacement)</span></span>
+</code></pre><p>replace()方法用来进行字符串替换操作，它可以接收两个参数，前者为被替换的子字符串（可以是正则），后者为用来替换的文本。</p>
+<p>如果第一个参数传入的是子字符串或是没有进行全局匹配的正则表达式，那么replace()方法将只进行一次替换（即替换最前面的），返回经过一次替换后的结果字符串。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'abcdeabcde'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.replace(<span class="string">'a'</span>, <span class="string">'A'</span>));
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.replace(/a/, <span class="string">'A'</span>));
+</code></pre><p>如果第一个参数传入的全局匹配的正则表达式，那么replace()将会对符合条件的子字符串进行多次替换，最后返回经过多次替换的结果字符串。</p>
+<pre><code>var str = <span class="string">'abcdeabcdeABCDE'</span>;
+console.log(str.replace(/a/g, <span class="string">'A'</span>));    //返回    AbcdeAbcdeABCDE
+console.log(str.replace(/a/gi, <span class="string">'$'</span>));   //返回<span class="variable">$bcde</span><span class="variable">$bcde</span><span class="variable">$BCDE</span>
+</code></pre><p>(2) split()方法</p>
+<pre><code>stringObject.<span class="function"><span class="title">split</span><span class="params">(separator,howmany)</span></span>
+</code></pre><p>split()方法用于把一个字符串分割成字符串数组。第一个参数separator表示分割位置(参考符)，第二个参数howmany表示返回数组的允许最大长度(一般情况下不设置)。</p>
+<pre><code>var str = <span class="string">'a|b|c|d|e'</span>;
+console.<span class="keyword">log</span>(str.<span class="keyword">split</span>(<span class="string">'|'</span>));    <span class="regexp">//</span>返回[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>, <span class="string">"e"</span>]
+console.<span class="keyword">log</span>(str.<span class="keyword">split</span>(<span class="string">'|'</span>, <span class="number">3</span>)); <span class="regexp">//</span>返回[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]
+console.<span class="keyword">log</span>(str.<span class="keyword">split</span>(<span class="string">''</span>)); <span class="regexp">//</span>返回[<span class="string">"a"</span>, <span class="string">"|"</span>, <span class="string">"b"</span>, <span class="string">"|"</span>, <span class="string">"c"</span>, <span class="string">"|"</span>, <span class="string">"d"</span>, <span class="string">"|"</span>, <span class="string">"e"</span>]
+</code></pre><p>也可以用正则来进行分割</p>
+<pre><code>var str = <span class="string">'a1b2c3d4e'</span>;
+<span class="built_in">console</span>.log(str.split(<span class="regexp">/\d/</span>)); <span class="regexp">//</span>返回[<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>, <span class="string">"d"</span>, <span class="string">"e"</span>]
+</code></pre><p>(3) toLowerCase()和toUpperCase()</p>
+<pre><code>stringObject.<span class="function"><span class="title">toLowerCase</span><span class="params">()</span></span> 
+stringObject.<span class="function"><span class="title">toUpperCase</span><span class="params">()</span></span>
+</code></pre><p>toLowerCase()方法可以把字符串中的大写字母转换为小写，toUpperCase()方法可以把字符串中的小写字母转换为大写。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">'JavaScript'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.toLowerCase()); <span class="comment">//返回javascript</span>
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.toUpperCase()); <span class="comment">//返回JAVASCRIPT</span>
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/24/字符串操作/" data-title="字符串操作 | Sunday" data-tsina="rtyt" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/03/16/README/"  title="CSSREM">
+ <strong>旧一篇:</strong><br/> 
+ <span>CSSREM
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="字符串操作" data-thread-key="字符串操作" data-author-key="魏传波" data-url="http://yoursite.com/post/字符串操作"></div>
+	
+</section>
+
+
+</div>  
+    </div>
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
