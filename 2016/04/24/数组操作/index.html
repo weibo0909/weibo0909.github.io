@@ -1,0 +1,401 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>数组操作 | Sunday</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="魏传波">
+    
+    <meta name="description" content="shift:删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefinedJavascript代码
+var a = [1,2,3,4,5];   
+var b = a.shift(); //a:[2,3,4,5] b:1  
+unshift:将参数添加到原数组开头，并返回数组的长度Jav">
+    
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="sear" />
+    <meta name="twitter:title" content="数组操作 | Sunday" />
+      
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Sunday" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+
+  
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
+  
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sunday">Sunday</a></h1>
+				<h2 class="blog-motto">心有猛虎，细嗅蔷薇</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/04/24/数组操作/" title="数组操作" itemprop="url">数组操作</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2016-04-24T07:58:19.000Z" itemprop="datePublished">2016-04-24</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		
+		</div>
+		
+		<p>shift:删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.shift(); <span class="comment">//a:[2,3,4,5] b:1  </span>
+</code></pre><p>unshift:将参数添加到原数组开头，并返回数组的长度<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.unshift(-<span class="number">2</span>,-<span class="number">1</span>); <span class="comment">//a:[-2,-1,1,2,3,4,5] b:7   </span>
+</code></pre><p>注:在IE6.0下测试返回值总为undefined，FF2.0下测试返回值为7，所以这个方法的返回值不可靠，需要用返回值时可用splice代替本方法来使用。 </p>
+<p>pop:删除原数组最后一项，并返回删除元素的值；如果数组为空则返回undefined<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.pop(); <span class="comment">//a:[1,2,3,4] b:5  </span>
+</code></pre><p>push:将参数添加到原数组末尾，并返回数组的长度<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.push(<span class="number">6</span>,<span class="number">7</span>); <span class="comment">//a:[1,2,3,4,5,6,7] b:7  </span>
+</code></pre><p>concat:返回一个新数组，是将参数添加到原数组中构成的<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.concat(<span class="number">6</span>,<span class="number">7</span>); <span class="comment">//a:[1,2,3,4,5] b:[1,2,3,4,5,6,7]  </span>
+</code></pre><p>splice(start,deleteCount,val1,val2,…):从start位置开始删除deleteCount项，并从该位置起插入val1,val2,…<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.splice(<span class="number">2</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>); <span class="comment">//a:[1,2,7,8,9,5] b:[3,4]   </span>
+var b = a.splice(<span class="number">0</span>,<span class="number">1</span>); <span class="comment">//同shift   </span>
+a.splice(<span class="number">0</span>,<span class="number">0</span>,-<span class="number">2</span>,-<span class="number">1</span>); var b = a.length; <span class="comment">//同unshift   </span>
+var b = a.splice(a.length-<span class="number">1</span>,<span class="number">1</span>); <span class="comment">//同pop   </span>
+a.splice(a.length,<span class="number">0</span>,<span class="number">6</span>,<span class="number">7</span>); var b = a.length; <span class="comment">//同push  </span>
+</code></pre><p>reverse:将数组反序<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.reverse(); <span class="comment">//a:[5,4,3,2,1] b:[5,4,3,2,1]  </span>
+</code></pre><p>sort(orderfunction):按指定的参数对数组进行排序<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.sort(); <span class="comment">//a:[1,2,3,4,5] b:[1,2,3,4,5]  </span>
+</code></pre><p>slice(start,end):返回从原数组中指定开始下标到结束下标之间的项组成的新数组<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.slice(<span class="number">2</span>,<span class="number">5</span>); <span class="comment">//a:[1,2,3,4,5] b:[3,4,5]  </span>
+</code></pre><p>join(separator):将数组的元素组起一个字符串，以separator为分隔符，省略的话则用默认用逗号为分隔符<br>Javascript代码</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];   
+var b = a.join(<span class="string">"|"</span>); <span class="comment">//a:[1,2,3,4,5] b:"1|2|3|4|5"  </span>
+</code></pre><p>数组是JavaScript提供的一个内部对象，它是一个标准的集合，我们可以添加(push)、删除(shift)里面元素，我们还可以通过for循环遍历里面的元素，那么除了数组我们在JavaScript里还可以有别的集合吗? </p>
+<p>　　由于JavaScript的语言特性，我们可以向通用对象动态添加和删除属性。所以Object也可以看成是JS的一种特殊的集合。下面比较一下Array和Object的特性: </p>
+<p>Javascript代码</p>
+<pre><code>　　<span class="comment">//Array:  </span>
+
+<span class="comment">/*新建:*/</span><span class="keyword">var</span> ary = <span class="keyword">new</span> <span class="built_in">Array</span>(); 或 <span class="keyword">var</span> ary = [];   
+<span class="comment">/*增加:*/</span>ary.push(value);   
+<span class="comment">/*删除:*/</span><span class="keyword">delete</span> ary[n];   
+<span class="comment">/*遍历:*/</span><span class="keyword">for</span> ( <span class="keyword">var</span> i=<span class="number">0</span> ; i &lt; ary.length ; ++i ) ary[i];  
+
+　　<span class="comment">//Object:  </span>
+
+<span class="comment">/*新建:*/</span><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); 或 <span class="keyword">var</span> obj = {};   
+<span class="comment">/*增加:*/</span>obj[key] = value; (key为<span class="built_in">string</span>)   
+<span class="comment">/*删除:*/</span><span class="keyword">delete</span> obj[key];   
+<span class="comment">/*遍历:*/</span><span class="keyword">for</span> ( <span class="keyword">var</span> key <span class="keyword">in</span> obj ) obj[key];  
+</code></pre><p>　　从上面的比较可以看出Object完全可以作为一个集合来使用，在使用Popup窗口创建无限级Web页菜单(3)中我介绍过Eric实现的那个<strong>MenuCache</strong>，它也就是一个模拟的集合对象。 </p>
+<p>　　如果我们要在Array中检索出一个指定的值，我们需要遍历整个数组: </p>
+<p>　　<br>代码:<br>Javascript代码</p>
+<pre><code><span class="keyword">var</span> keyword = ;   
+　　<span class="keyword">for</span> ( <span class="keyword">var</span> i=<span class="number">0</span> ; i &lt; ary.length ; ++i )   
+　　{   
+　　<span class="keyword">if</span> ( ary[i] == keyword )   
+　　{   
+　　<span class="comment">// todo   </span>
+　　}   
+　　}  
+</code></pre><p>　　而我们在Object中检索一个指定的key的条目，只需要是要使用: </p>
+<p>　　<br>代码:<br>Javascript代码</p>
+<pre><code><span class="built_in">var</span> <span class="built_in">key</span> = '';   
+　　<span class="built_in">var</span> <span class="built_in">value</span> = obj[<span class="built_in">key</span>];   
+　　<span class="comment">// todo  </span>
+</code></pre><p>　Object的这个特性可以用来高效的检索Unique的字符串集合，遍历Array的时间复杂度是O(n)，而遍历Object的时间复杂度是O(1)。虽然对于10000次集合的for检索代价也就几十ms，可是如果是1000*1000次检索或更多，使用Object的优势一下就体现出来了。在此之前我做了一个mapping，把100个Unique的字符mapping到1000个字符串数组上，耗时25-30s!后来把for遍历改成了Object模拟的集合的成员引用，同样的数据量mapping，耗时仅1.7-2s!!! </p>
+<p>对于集合的遍历效率(从高到低):</p>
+<pre><code><span class="keyword">var</span> <span class="keyword">value</span> = obj[key]; &gt; <span class="keyword">for</span> ( ; ; ) &gt; <span class="keyword">for</span> ( <span class="keyword">in</span> )
+</code></pre><p>　　<br>效率最差的就是for( in )了，如果集合过大，尽量不要使用for ( in )遍历。 </p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016/04/24/数组操作/" data-title="数组操作 | Sunday" data-tsina="rtyt" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/04/24/字符串操作/"  title="字符串操作">
+ <strong>旧一篇:</strong><br/> 
+ <span>字符串操作
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="数组操作" data-thread-key="数组操作" data-author-key="魏传波" data-url="http://yoursite.com/post/数组操作"></div>
+	
+</section>
+
+
+</div>  
+    </div>
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
